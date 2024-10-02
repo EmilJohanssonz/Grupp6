@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monster Inc</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/app/MonsterInc.js">defer</script>
+  </head>
+  <header>
+    <h1>Bygg din egen klass av monsters</h1>
+  </header>
+  <section>
+    <!--Lägg till monster-->
+    <h2>Add a New Monster</h2>
+    <div class="monsterBox">
+    <form id="monsterForm">
+        <input type="text" id="name" placeholder="Monster Name" required>
+        <input type="text" id="type" placeholder="Monster Type" required>
+        <input type="number" id="strength" placeholder="Strength" required>
+        <button type="submit">Add Monster</button>
+    </form>
+  </div>
+</section>
+  <!-- Lista med alla monster -->
+  <section>
+    <h2>All Monsters</h2>
+    <ul id="monsterList"></ul>
+</section>
+</main>
+  </body>
+  <footer>Fotter</footer>
+</html>
