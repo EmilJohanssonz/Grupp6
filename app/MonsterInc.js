@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
   monsterForm.addEventListener("submit", (event) => {
     event.preventDefault(); // Förhindrar att sidan laddas om när formuläret skickas
 
+// om man vill redigera någon egenskap så kan 
+//man ändra värdet här nere, glöm inte o       
+//ändra i div taggen och update listan⬇️
+
+
     // Hämta värdena från formulärfälten
     const name = monsterForm.name.value;
     const type = monsterForm.type.value;
@@ -70,6 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
       monsterDiv.classList.add("monster-box");
       monsterDiv.style.backgroundColor = monster.color; // Ge bakgrundsfärg baserat på monsterfärgen
 
+// här kan du redigera div taggen ⬇️
+
       // Fyll i monsteregenskaper i div-taggen
       monsterDiv.innerHTML = `
         <p><strong>Name:</strong> ${monster.name}</p>
@@ -105,6 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Funktion för att fylla i formuläret med ett monsters data vid redigering
+// glöm inte att redigera här också ⬇️
   function loadMonsterIntoForm(index) {
     const monster = monsters[index]; // Hämta det monster som ska redigeras
     // Fyll i formulärfälten med monstrets egenskaper
