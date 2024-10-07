@@ -5,29 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monster Inc</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/app/MonsterInc.js">defer</script>
+    <script src="/app/MonsterInc.js" defer></script>
   </head>
-  <header>
-    <h1>Bygg din egen klass av monsters</h1>
-  </header>
-  <section>
-    <!--Lägg till monster-->
-    <h2>Add a New Monster</h2>
-    <div class="monsterBox">
-    <form id="monsterForm">
-        <input type="text" id="name" placeholder="Monster Name" required>
-        <input type="text" id="type" placeholder="Monster Type" required>
-        <input type="number" id="strength" placeholder="Strength" required>
-        <button type="submit">Add Monster</button>
-    </form>
-  </div>
-</section>
-  <!-- Lista med alla monster -->
-  <section>
-    <h2>All Monsters</h2>
-    <ul id="monsterList"></ul>
-</section>
-</main>
+  <body>
+    <!-- Header -->
+    <header>
+      <img src="/img/monsterinc.png">
+      <div class="">
+      <h1>Monster Inc</h1>
+      <p>Skapad av Emil, Sabina,  
+        Tahidul och Musse</p>
+    </div>
+    </header>
+
+    <!-- Formulär börjar -->
+    <section class="monsterLäggTill">
+      <!-- sök efter monster -->
+   <form class="search-form">
+     <input type="text" id="search" placeholder="Search category">
+     <button id="search-button">🐉</button>
+     <ul id="search-results"></ul>
+   </form>
+  
+      <!-- formulär för att lägga till monster -->
+      <h2>Add a New Monster</h2>
+      <div class="monsterBox">
+        <form id="monsterForm">
+          <input type="text" id="name" placeholder="Monster Namn" required>
+          
+          <!-- olika typer av monster -->
+          <select id="type" required>
+            <option value="">Välj Monster Type</option>
+            <option value="fire">Fire</option>
+            <option value="water">Water</option>
+            <option value="earth">Earth</option>
+          </select>
+
+          <!-- olika färger att välja på -->
+          <select id="color" required>
+            <option value="">Choose Color</option>
+            <option id="black" value="black">Black</option>
+            <option value="white">White</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+          </select>
+
+          <!-- Lägg antal tentaklar -->
+          <input type="number" id="tentacles" placeholder="tentacles" min="0" max="20" >
+
+          <!-- Lägg antal ögon -->
+          <input type="number" id="eyes" placeholder="Eyes" min="0" max="20" >
+
+          <!-- Lägg till antal horn -->
+          <input type="number" id="horn" placeholder="Horn" min="0" max="20">
+  
+          <!-- Lägg till antal armar -->
+          <input type="number" id="arms" placeholder="Arms" min="0" max="20">
+
+          <!-- Lägg till monster-knapp -->
+          <button type="submit">Add Monster</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Lista med alla monster -->
+    <section class="monster-list">
+      <h2>All Monsters</h2>
+      <div class="monster-container"></div> <!-- Lägger till detta för att placera monsterboxarna -->
+      <!-- antal av monster visas i span-->
+       <!--är ett inline element som används för att gruppera text eller andra inline element
+       utan att bryta flödet i innehållet.
+       när man påverka en text eller element utan att ändra layouten.-->
+      <span id="number-of-monsters"></span>
+    </section>
   </body>
-  <footer>Fotter</footer>
+
+  <footer>
+    <a href="https://github.com/EmilJohanssonz/Grupp6.git" target="_blank">
+      <img src="/img/github.png">
+    </a>
+  </footer>
 </html>
