@@ -1,40 +1,21 @@
-// Search-knappen
-const searchInputWrapper = document.querySelector(".search-input-wrapper");
-const searchInput = document.querySelector(".search-input input");
-const searchIcon = document.querySelector(".search-icon i");
-const closeIcon = document.querySelector(".search-input i");
+let monsters = []; // Global lista för alla skapade monster
 
-searchIcon.addEventListener("click", () => {
-  searchIcon.parentElement.classList.add("change");
-  searchInputWrapper.classList.add("change");
-
-  setTimeout(() => {
-    searchInput.focus();
-  }, 300); // Kortare timeout för snabbare användarrespons
-});
-
-closeIcon.addEventListener("click", () => {
-  searchIcon.parentElement.classList.remove("change");
-  searchInputWrapper.classList.remove("change");
-  searchInput.value = ""; // Rensar sökfältet när det stängs
-});
-
-// DOM för att hämta data till formulär
 document.addEventListener("DOMContentLoaded", () => {
-  const monsterForm = document.querySelector("#monsterForm"); // Formuläret
-  const submitButton = document.querySelector("#monsterForm button[type='submit']"); // Knapppen som skapar ett monster
-  const monsterList = document.querySelector(".monster-container"); // Div-taggen som visar alla monster
-  const numberOfMonsters = document.querySelector("#number-of-monsters"); // Span-taggen som visar antal monster i listan
-  const monsterHeader = document.querySelector("#monster-header"); // H2-elementet
-
-  // Tom lista för att lagra alla monster
-  let monsters = [];
+  const monsterForm = document.querySelector("#monsterForm");
+  const submitButton = monsterForm.querySelector("button[type='submit']");
+  const monsterList = document.querySelector(".monster-container");
+  const numberOfMonsters = document.querySelector("#number-of-monsters");
+  const monsterHeader = document.querySelector("#monster-header");
+  const searchInput = document.querySelector(".search-input input");
+  const seeAllButton = document.querySelector(".see-all");
+  const seeAllList = document.getElementById("see-all");
 
   // Lyssna på formulärets submit-knapp
   monsterForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    // Skapar ett monster-objekt med olika egenskaper
+    // om man vill redigera ett monster så ska man ändra i detta formulär samt uppdatera listan i div taggen.
+
     const name = monsterForm.name.value;
     const type = monsterForm.type.value;
     const color = monsterForm.color.value;
@@ -43,40 +24,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const horn = monsterForm.horn.value;
     const ears = monsterForm.ears.value;
 
-    // Skapar en editIndex om det finns ett monster att redigera
     const editIndex = monsterForm.getAttribute("data-edit-index");
 
-    // Uppdatera ett befintligt monster
     if (editIndex !== null) {
       monsters[editIndex] = { name, type, color, tentacles, eyes, horn, ears };
       monsterForm.removeAttribute("data-edit-index");
       submitButton.textContent = "Add Monster";
     } else {
-      // Lägg till ett nytt monster
       const newMonster = { name, type, color, tentacles, eyes, horn, ears };
       monsters.push(newMonster);
     }
 
-    // Visa H2-rubriken när minst ett monster har skapats
     if (monsters.length > 0) {
-      monsterHeader.style.display = "block";  // Gör H2 synlig
+      monsterHeader.style.display = "block";
     } else {
-      monsterHeader.style.display = "none"; // Gör H2 osynlig
+      monsterHeader.style.display = "none";
     }
 
-    // Uppdatera listan med alla monster
-    updateMonsterList(monsters);
+    updateMonsterList(monsters, monsterList);
     monsterForm.reset();
     numberOfMonsters.textContent = `Number of monsters: ${monsters.length}`;
   });
 
-  // Funktion för att uppdatera DOM med alla monster
-  function updateMonsterList(monstersToShow) {
-    monsterList.innerHTML = ""; // Rensar monsterlistan
+  // Funktion för att uppdatera listan
+  function updateMonsterList(monstersToShow, targetElement) {
+    targetElement.innerHTML = "";
     monstersToShow.forEach((monster, index) => {
       const monsterDiv = document.createElement("div");
       monsterDiv.classList.add("monster-box");
-      monsterDiv.style.backgroundColor = monster.color;
+
+      monsterDiv.style.backgroundColor = monster.color; // Färgen för bakgrunden i div taggen.
+      // om man redigerar ett monster så ska man ändra i detta div taggen.
 
       monsterDiv.innerHTML = `
         <p><strong>Name:</strong> ${monster.name}</p>
@@ -90,10 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <button class="delete" data-index="${index}">Remove</button>
       `;
 
-      monsterList.appendChild(monsterDiv);
+      targetElement.appendChild(monsterDiv);
     });
 
-    // Lägg till lyssnare för edit- och delete-knappar
+    // Lägg till redigera och ta bort funktioner
     document.querySelectorAll(".edit").forEach((button) => {
       button.addEventListener("click", (event) => {
         const indexEdit = event.target.getAttribute("data-index");
@@ -107,11 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
         deleteMonster(indexDelete);
       });
     });
-
-    numberOfMonsters.textContent = `Number of monsters: ${monstersToShow.length}`;
   }
 
-  // Funktion för att fylla formuläret med monsterdata vid redigering
+  // Ladda ett monster i formuläret för redigering
   function loadMonsterIntoForm(index) {
     const monster = monsters[index];
     document.getElementById("name").value = monster.name;
@@ -126,43 +102,24 @@ document.addEventListener("DOMContentLoaded", () => {
     submitButton.textContent = "Save Changes";
   }
 
-  // Funktion för att ta bort ett monster från listan
+  // Ta bort ett monster
   function deleteMonster(index) {
     monsters.splice(index, 1);
-    updateMonsterList(monsters);
+    updateMonsterList(monsters, monsterList);
 
-    // Göm H2-rubriken om alla monster tas bort
     if (monsters.length === 0) {
       monsterHeader.style.display = "none";
     }
   }
 
-  // Funktion för att söka efter monster
-  function searchMonsters() {
-    const searchInputValue = searchInput.value.toLowerCase(); // Hämtar sökvärdet
-    const filteredMonsters = monsters.filter((monster) => {
-      return (
-        monster.name.toLowerCase().includes(searchInputValue) ||
-        monster.type.toLowerCase().includes(searchInputValue) ||
-        monster.color.toLowerCase().includes(searchInputValue)
-      );
-    });
-
-    updateMonsterList(filteredMonsters);
-    searchInput.value = ""; // Rensa sökfältet efter sökning
+  // Funktion för att visa alla monster
+  function showAllMonsters() {
+    seeAllList.innerHTML = "";
+    updateMonsterList(monsters, seeAllList);
   }
 
-  // Lägg till event listener för sökknappen
-  document.getElementById("search-button").addEventListener("click", (event) => {
-    event.preventDefault();
-    searchMonsters();
-  });
-
-  // Lägg till event listener för Enter-tangenten i sökrutan
-  searchInput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      searchMonsters();
-    }
+  // Event listener för "See All Monsters"
+  seeAllButton.addEventListener("click", () => {
+    showAllMonsters();
   });
 });
