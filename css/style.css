@@ -15,17 +15,6 @@ header {
 }
 
 
-header img {
-  max-width: 200px;
-  height: auto;
-  margin-left: -20px;
-}
-header div {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding:10px
-}
 /* Styling av monsster formulär */
 .monsterBox {
     width: 300px;
@@ -77,6 +66,23 @@ padding: 10px;
     color: #fff;
   }
 
+}
+
+.see-all { margin-top: 20px;
+  font-weight: bold;
+  color: #333;
+  background-color: aqua;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #333;
+    color: #fff;
+  }
 }
 
 
