@@ -5,7 +5,6 @@ const searchInput = document.querySelector(".search-input input")
 const searchIcon = document.querySelector(".search-icon i");
 const closeIcon = document.querySelector(".search-input i");
 
-<<<<<<< HEAD
 searchIcon.addEventListener(`click`, () => {
   searchIcon.parentElement.classList.add("change");
   searchInputWrapper.classList.add("change");
@@ -19,21 +18,7 @@ closeIcon.addEventListener(`click`, () => {
   searchIcon.parentElement.classList.remove("change");
   searchInputWrapper.classList.remove("change");
 })
-=======
-searchIcon.addEventListener(`click`,() => {
-   searchIcon.parentElement.classList.add("change");
-   searchInputWrapper.classList.add("change");
 
-   setTimeout(() => {
-       searchInput.focus();
-   }, 1000);
-})
-
-closeIcon.addEventListener(`click`,() => {
-   searchIcon.parentElement.classList.remove("change");
-   searchInputWrapper.classList.remove("change");
-   })
->>>>>>> 8e11d2c4c578e16dcdc890224269aeeaf698b28e
 
 
 
@@ -64,12 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const tentacles = monsterForm.tentacles.value;
     const eyes = monsterForm.eyes.value;
     const horn = monsterForm.horn.value;
-<<<<<<< HEAD
-    const ears = monsterForm.ears.value;
 
-=======
-    const arms = monsterForm.arms.value;
->>>>>>> 8e11d2c4c578e16dcdc890224269aeeaf698b28e
+    const ears = monsterForm.ears.value;
 
     // ↑ om man vill kunna redigera med andra egenskaper, ↑
     // så får man lägga till ny const med den nya egenskapen.
@@ -81,20 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Uppdatera ett befintligt monster
     if (editIndex !== null) { // om det finns ett monster att redigera
-<<<<<<< HEAD
+
       monsters[editIndex] = { name, type, color, tentacles, eyes, horn, ears };
-=======
-      monsters[editIndex] = { name, type, color, tentacles, eyes, horn, arms };
->>>>>>> 8e11d2c4c578e16dcdc890224269aeeaf698b28e
       monsterForm.removeAttribute("data-edit-index"); // ta bort attributet data-edit-index
       submitButton.textContent = "Add Monster"; // Återställ knappen till 'Add Monster'
     } else {
       // Lägg till ett nytt monster
-<<<<<<< HEAD
+
       const newMonster = { name, type, color, tentacles, eyes, horn, ears };
-=======
-      const newMonster = { name, type, color, tentacles, eyes, horn, arms };
->>>>>>> 8e11d2c4c578e16dcdc890224269aeeaf698b28e
+
       monsters.push(newMonster); // använder push() för att lägga till ett objekt i arrayen
     }
     // uppdatera listan med alla monster
@@ -127,11 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>Tentacles:</strong> ${monster.tentacles}</p>
         <p><strong>Eyes:</strong> ${monster.eyes}</p>
         <p><strong>Horn:</strong> ${monster.horn}</p>
-<<<<<<< HEAD
         <p><strong>ears:</strong> ${monster.ears}</p>
-=======
-        <p><strong>Arms:</strong> ${monster.arms}</p>
->>>>>>> 8e11d2c4c578e16dcdc890224269aeeaf698b28e
         <button class="edit" data-index="${index}">Edit</button>
         <button class="delete" data-index="${index}">Remove</button>
       `;
@@ -167,11 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("tentacles").value = monster.tentacles;
     document.getElementById("eyes").value = monster.eyes;
     document.getElementById("horn").value = monster.horn;
-<<<<<<< HEAD
     document.getElementById("ears").value = monster.ears;
-=======
-    document.getElementById("arms").value = monster.arms;
->>>>>>> 8e11d2c4c578e16dcdc890224269aeeaf698b28e
+
 
     // Sätt attribut för att indikera att vi redigerar
     monsterForm.setAttribute("data-edit-index", index);
