@@ -1,103 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  padding:5px;
+  margin: auto;
+  scroll-behavior: smooth;
+  h2 {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: #9CF6F6;
+    font-size: 2rem;
+  }
+}
 body {
-  text-align: center;
- 
+  background-color: #fff;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 header {
-  background-color:#f9f9f9; 
-  color:#333; 
-  display: flex; 
+  font-weight: bolder;
+  font-size: 2rem;
+  color: #C9F778;
+  img {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+main {
+  display: flex;
+  justify-content:center;
+  gap: 40px;
+  margin-right: auto;
+  margin-top: 80px;
+}
+/* Bygg Monster Sektion */
+.monster-form-section {
+  display: flex;
+  flex-direction: column;
   align-items:center;
   justify-content:center;
-  padding: 10px; 
-  font-family: 'Arial', sans-serif; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  padding: 20px;
+  height: 400px;
+  width: 300px;
+  background-color: #ADBCFF;
+  border-radius: 10px;
+  /* Första ram */
+  border: 4px solid #9CF6F6;
+  /* Simulerad andra ram */
+  box-shadow: 0 0 0 3px #C9F778, 0 0 10px rgba(0, 0, 0, 0.2);
+  gap: 10px;
+
 }
 
-
-/* Styling av monsster formulär */
-.monsterBox {
-    width: 300px;
-    margin: 20px auto; /* Centrera boxen på sidan */
-    padding: 20px;
-    background-color: #f9f9f9; /* Ljuskgrå bakgrund */
-    border: 2px solid #ccc; /* Grå ram */
-    border-radius: 10px; /* Rundade hörn */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lätt skugga för djup */
-}
-/* Styling av monsterkortet */
-.monster-box {
-  display: inline-block;
-  border: 2px solid #333;
+#monsterForm {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 5%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  p {
-    color:aqua;
+  width: 90%;
+  h2 {
+    text-align: center;
+    margin-top: 5px;
   }
+ 
+
+  legend {
+    font-weight: bolder;
+    font-size: 1.6rem;
+    color: #C9F778;
+    text-align: center;
+  }
+  fieldset {
+    border: 2px solid #C9F778;
+    border-radius: 5px;
+    padding: 5px 5px 0px 5px;
+  }
+
+    label {
+      color: #9CF6F6;
+      font-weight: bolder;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      display: inline-block; 
+      width: auto; 
+    }
+  
+
+  input, select {
+    padding: 5px;
+    margin-top: -10px;
+    font-size: 1.1rem;
+    border: 1px solid #C9F778;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    width: 100%; 
+  }
+
   button {
-    background-color: #333;
-    color: #fff;
-    border: 1px solid aqua;
-    padding: 5px 10px;
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #C9F778;
+    color: #333;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    &:hover {
-      background-color: aqua;
-    }
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #b4e255;
   }
 }
 
-span {
-margin-top: 20px;
-  font-weight: bold;
-  color: #333;
-  background-color: aqua;
-  border:1px solid #333;
-padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
-  cursor: pointer;
-  &:hover {
-    background-color: #333;
-    color: #fff;
-  }
-
+/* Resultat Sektion */
+.monster-list-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+height: 400px;
+width: 300px;
 }
 
-.see-all { margin-top: 20px;
-  font-weight: bold;
-  color: #333;
-  background-color: aqua;
-  border: 1px solid #333;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  &:hover {
-    background-color: #333;
-    color: #fff;
-  }
-}
-
-
-/* Styling av footer */
-footer {
-  margin-top: 40px;
+.container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #333;
-  color: #fff;
+  gap: 20px;
+  padding: 20px;
+  height: auto;
+  width: 300px;
+  background-color: #ADBCFF;
+  border-radius: 10px;
+  border: 4px solid #9CF6F6;
+  box-shadow: 0 0 0 3px #C9F778, 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.monster-box {
+  border: 4px solid #9CF6F6;
+  box-shadow: 0 0 0 3px #C9F778, 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
-  text-align: center;
-  img {
-    width: 50px;
-    height: 50px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolumner */
+  grid-gap: 10px;
+  width: 100%; /* Full bredd på förälderelementet */
+  p {
+    color:#b4e255;
+    font-weight: bolder;
+
   }
+
+  .delete-btn {
+    background-color: #ADBCFF;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .edit-btn {
+    background-color: #b4e255;
+    border: none;
+    border-radius: 5px;
+}
 }

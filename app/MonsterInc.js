@@ -52,18 +52,20 @@ monsterForm.addEventListener("submit", (event) => {
   const eyes = monsterForm.eyes.value;
   const horn = monsterForm.horn.value;
   const ears = monsterForm.ears.value;
+  const wings = monsterForm.wings.value;
 
   // Kontrollera om ett monster redigeras eller skapas nytt
+  // om man har gjort nytt värde får man lägga till det här också
   const editIndex = monsterForm.getAttribute("data-edit-index");
 
   if (editIndex !== null) {
     // Redigera befintligt monster
-    monsters[editIndex] = { name, type, color, tentacles, eyes, horn, ears };
+    monsters[editIndex] = { name, type, color, tentacles, eyes, horn, ears, wings };
     monsterForm.removeAttribute("data-edit-index");
     submitButton.textContent = "Add Monster";
   } else {
     // Skapa nytt monster
-    const newMonster = { name, type, color, tentacles, eyes, horn, ears };
+    const newMonster = { name, type, color, tentacles, eyes, horn, ears, wings };
     monsters.push(newMonster);
   }
 
@@ -94,8 +96,9 @@ function updateMonsterList(monstersToShow, targetElement) {
       <p><strong>Eyes:</strong> ${monster.eyes}</p>
       <p><strong>Horn:</strong> ${monster.horn}</p>
       <p><strong>Ears:</strong> ${monster.ears}</p>
-      <button class="edit-btn">Edit</button>
+      <p><strong>Wings:</strong> ${monster.wings}</p>
       <button class="delete-btn">Delete</button>
+      <button class="edit-btn">Edit</button>
     `;
 
     // Lägg till händelsehanterare för redigera-knappen
@@ -111,6 +114,7 @@ function updateMonsterList(monstersToShow, targetElement) {
       monsterForm.eyes.value = monsterToEdit.eyes;
       monsterForm.horn.value = monsterToEdit.horn;
       monsterForm.ears.value = monsterToEdit.ears;
+      monsterForm.wings.value = monsterToEdit.wings;
       submitButton.textContent = "Save Changes";
       monsterForm.setAttribute("data-edit-index", index);
     });
