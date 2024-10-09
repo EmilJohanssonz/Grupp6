@@ -6,7 +6,6 @@
     <title>Monster Klass</title>
     <script src="/app/MonsterInc.js" defer></script>
     <link rel="stylesheet" href="/css/style.css" />
-    <!--link for search-->
     <link rel="stylesheet" href="/css/search.css" />
     <link
       rel="stylesheet"
@@ -22,7 +21,7 @@
             <input
               type="text"
               id="search"
-              placeholder="Search"
+              placeholder="Search monsters, types or colors"
               aria-label="Search monsters"
             />
             <i class="fas fa-times" aria-hidden="true"></i>
@@ -30,9 +29,10 @@
         </div>
         <div class="search-icon" aria-label="Search button">
           <i class="fas fa-search" id="search-button" aria-hidden="true"></i>
+    
         </div>
       </section>
-    
+
       <!-- Bygg Monster Sektion -->
       <section class="monster-form-section">
         <h2>Build Your Monster</h2>
@@ -119,17 +119,16 @@
       <!-- Lista av skapade monster -->
       <section id="monster-list-section" aria-labelledby="monster-list">
         <h2 id="monster-header" style="display: none;">Created Monsters</h2>
-        <div class="monster-container"></div> <!-- Den här div-taggen används för att visa alla monster -->
+        <!-- Den här div-taggen används för att visa alla monster -->
+        <div class="monster-container"></div> 
         <span id="number-of-monsters">Number of monsters: 0</span>
-        <button class="see-all" onclick="showAllMonsters()">See All Monsters</button>
+        <button class="see-all" id="seeAllButton">See All Monsters</button>
         <ul id="see-all"></ul>
       </section>
     </main>
-<!-- Footer -->
+    <!-- Footer -->
     <footer>
-      <a href="https://github.com/EmilJohanssonz/Grupp6.git" target="_blank" aria-label="Github link">
+      <a href="https://github.com/EmilJohanssonz/Grupp6.git" target="_blank">
         <img src="/img/github.png" alt="Github logo" />
       </a>
     </footer>
-  </body>
-</html>
