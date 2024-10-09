@@ -1,29 +1,24 @@
-// javascript för den importerade sök knappen
+// javascript för den importerade sökknappen
 const searchInputWrapper = document.querySelector(".search-input-wrapper");
 const searchInput = document.querySelector(".search-input input");
 const searchIcon = document.querySelector(".search-icon i");
 const closeIcon = document.querySelector(".search-input i");
 
+// Hantera sökikonens klick för att visa sökrutan och fokusera på den
 searchIcon.addEventListener("click", () => {
-  searchIcon.parentElement.classList.add("change");
+  // Lägg till klassen för att ändra visibiliteten
   searchInputWrapper.classList.add("change");
 
   // Fokusera direkt på sökfältet
-  searchInput.focus();
-
-  setTimeout(() => {
-
-  }, 300); // Kortare timeout för snabbare användarrespons
+  searchInput.focus(); // Fokuserar på sökfältet direkt efter visningen
 });
 
 closeIcon.addEventListener("click", () => {
-  searchIcon.parentElement.classList.remove("change");
   searchInputWrapper.classList.remove("change");
   searchInput.value = ""; // Rensar sökfältet när det stängs
 });
-// console.log(searchInput);
 
-// Hämta referenser till nödvändiga elementen
+// Hämta referenser till nödvändiga element
 const monsterForm = document.querySelector("#monsterForm");
 const submitButton = document.querySelector("#monsterForm button[type='submit']");
 const monsterList = document.querySelector(".monster-container");
@@ -42,9 +37,6 @@ monsterForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   // Hämta input-värden från formuläret
-  // ⬇️Här kan man också ändra värdena i formulalet ⬇️
-  // Glöm inte att ändra i div taggen som ligger i monster-box och uppdatera i monsterList!
-
   const name = monsterForm.name.value;
   const type = monsterForm.type.value;
   const color = monsterForm.color.value;
@@ -75,10 +67,6 @@ monsterForm.addEventListener("submit", (event) => {
 });
 
 // Funktion för att uppdatera monsterlistan
-// Skapar en ny div för varje monster som läggs till
-// Gör så att diven ändrar bakgrundsfärg till varje monster med respektive färg man gav på monstret
-// Här kan man redigera de nya värderna man skrev i input formuläret, glöm inte att upppdatera i uppdateringsfunktionen!
-//         ⬇️               ⬇️
 function updateMonsterList(monstersToShow, targetElement) {
   targetElement.innerHTML = ""; // Rensa befintlig lista
   monstersToShow.forEach((monster, index) => {
@@ -99,9 +87,6 @@ function updateMonsterList(monstersToShow, targetElement) {
     `;
 
     // Lägg till händelsehanterare för redigera-knappen
-    // Här får man uppdatera de nya värdena som man gav tidigare i koden
-    //      ⬇️               ⬇️
-
     monsterDiv.querySelector(".edit-btn").addEventListener("click", () => {
       const monsterToEdit = monsters[index];
       monsterForm.name.value = monsterToEdit.name;
@@ -160,7 +145,6 @@ function updateMonsterVisibility() {
 }
 
 // Sökfunktion för att filtrera monster baserat på sökfältet
-// Man kan filtera med enbart namn, typ och färg
 function searchMonsters() {
   const searchInputValue = searchInput.value.toLowerCase(); // Hämta sökvärdet
   const filteredMonsters = monsters.filter((monster) => {
@@ -177,7 +161,6 @@ function searchMonsters() {
 // Lägg till event listener för sök-knappen
 searchButton.addEventListener("click", (event) => {
   event.preventDefault();
-  searchInput.focus(); // Fokuserar på sökrutan
   searchMonsters(); // Kör sökfunktionen när man trycker på knappen
 });
 
@@ -185,7 +168,6 @@ searchButton.addEventListener("click", (event) => {
 searchInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
-    searchInput.focus(); // Fokuserar på sökrutan
     searchMonsters(); // Kör sökfunktionen när man trycker på Enter
   }
 });
