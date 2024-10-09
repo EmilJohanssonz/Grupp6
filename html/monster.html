@@ -48,12 +48,24 @@
               placeholder="Enter monster's name"
               required
             />
-            <!-- Dynamiska input ska ändras imorgon av gruppen-------------------------- -->
+
             <label for="type">Monster Type:</label>
-            <select id="type" name="type" required></select>
+            <select id="type" name="type" required>
+              <option value="" disabled selected>Select monster type</option>
+              <option value="water">Water</option>
+              <option value="fire">Fire</option>
+              <option value="earth">Earth</option>
+            </select>
 
             <label for="color">Monster Color:</label>
-            <select id="color" name="color" required></select>
+            <select id="color" name="color" required>
+              <option value="" disabled selected>Select monster color</option>
+              <option value="blue">Blue</option>
+              <option value="green">Green</option>
+              <option value="red">Red</option>
+              <option value="white">White</option>
+              <option value="black">Black</option>
+            </select>
 
             <label for="eyes">Number of eyes:</label>
             <input
@@ -106,22 +118,17 @@
 
       <!-- Lista av skapade monster -->
       <section id="monster-list-section" aria-labelledby="monster-list">
-
-        <h2 id="monster-header" style="display: none">Created Monsters</h2>
-        <div class="monster-container"></div>
+        <h2 id="monster-header" style="display: none;">Created Monsters</h2>
         <!-- Den här div-taggen används för att visa alla monster -->
+        <div class="monster-container"></div> 
         <span id="number-of-monsters">Number of monsters: 0</span>
-        <button class="see-all" onclick="showAllMonsters()">
-          See All Monsters
-        </button>
+        <button class="see-all" id="seeAllButton">See All Monsters</button>
         <ul id="see-all"></ul>
       </section>
     </main>
     <!-- Footer -->
     <footer>
-
       <a href="https://github.com/EmilJohanssonz/Grupp6.git" target="_blank">
-
         <img src="/img/github.png" alt="Github logo" />
       </a>
     </footer>
