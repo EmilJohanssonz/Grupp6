@@ -54,6 +54,8 @@ monsterForm.addEventListener("submit", (event) => {
   const ears = monsterForm.ears.value;
   const wings = monsterForm.wings.value;
 
+
+
   // Kontrollera om ett monster redigeras eller skapas nytt
   // om man har gjort nytt värde får man lägga till det här också
   const editIndex = monsterForm.getAttribute("data-edit-index");
@@ -97,8 +99,8 @@ function updateMonsterList(monstersToShow, targetElement) {
       <p><strong>Horn:</strong> ${monster.horn}</p>
       <p><strong>Ears:</strong> ${monster.ears}</p>
       <p><strong>Wings:</strong> ${monster.wings}</p>
-      <button class="delete-btn">Delete</button>
       <button class="edit-btn">Edit</button>
+      <button class="delete-btn">Delete</button>
     `;
 
     // Lägg till händelsehanterare för redigera-knappen
