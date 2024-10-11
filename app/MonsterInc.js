@@ -30,7 +30,7 @@ const monsterList = document.querySelector(".monster-container");
 const numberOfMonsters = document.querySelector("#number-of-monsters");
 const monsterHeader = document.querySelector("#monster-header");
 const seeAllButton = document.querySelector(".see-all");
-const seeAllList = document.getElementById("see-all");
+const seeAllList = document.getElementById("see-all-monsters");
 const searchButton = document.getElementById("search-button");
 
 // Variabler vi använder
