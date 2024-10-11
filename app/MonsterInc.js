@@ -137,7 +137,7 @@ function updateMonsterList(monstersToShow, targetElement) {
 function showAllMonsters() {
   if (monstersVisible) {
     // Om monsterlistan visas, döljer vi den
-    seeAllList.style.display = "none";
+    seeAllList.style.display = "";
     seeAllButton.textContent = "See All Monsters"; // Ändrar knapptexten
   } else {
     // Om monsterlistan är dold, visar vi den
@@ -147,7 +147,7 @@ function showAllMonsters() {
       seeAllList.innerHTML = "";
       updateMonsterList(monsters, seeAllList);
     }
-    seeAllList.style.display = "";
+    seeAllList.style.display = "none";
     seeAllButton.textContent = "Hide All Monsters"; // Ändrar knapptexten
   }
   monstersVisible = !monstersVisible; // Växlar status för synlighet
