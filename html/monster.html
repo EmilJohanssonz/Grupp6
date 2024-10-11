@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monster Klass</title>
     <script src="/app/MonsterInc.js" defer></script>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/body.css" />
     <link rel="stylesheet" href="/css/search.css" />
     <link rel="stylesheet" href="/css/monsterCards.css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -33,9 +33,27 @@
           <i class="fas fa-search" id="search-button" aria-hidden="true"></i>
         </div>
       </section>
-    </nav>
-
-    <h2>Build Your Monster</h2>
+       </nav>
+       <!-- Header -->
+    <header>
+        <img src="/img/monster1.png" alt="bild på monsterinc">
+        <h1>Grupp6</h1>
+        <p>Emil Sabina Tahidul Musse</p>
+    </header>
+      <!-- Lista av skapade monster -->
+      <section id="monster-list-section" aria-labelledby="monster-list">
+        <div class="container">
+          <h2 id="monster-header" style="display: none;">Created Monsters</h2>
+          <!-- Den här div-taggen används för att visa alla monster -->
+          <div class="monster-container"></div>
+          <p id="number-of-monsters">Number of monsters: 0</p>
+        </div>
+        <!-- Lista av alla monster -->
+        <div class="monster-summary"> <!-- Den större boxen till höger -->
+          <button class="see-all" id="seeAllButton">See All Monsters</button>
+          <ul id="see-all"></ul>
+        </div>
+      </section>
     <!-- Bygg Monster Sektion -->
     <section class="monster-form-section">
       <form id="monsterForm" aria-labelledby="monster-form">
@@ -110,19 +128,19 @@
             max="20"
             required
           />
+            <label for="wings">Number of wings:</label>
+            <input
+              type="number"
+              id="wings"
+              name="wings"
+              placeholder="Choose number of wings"
+              min="0"
+              max="4"
+              />
 
           <button type="submit">Add Monster</button>
         </fieldset>
       </form>
-    </section>
-
-    <!-- Lista av skapade monster -->
-    <section id="monster-list-section" aria-labelledby="monster-list">
-      <h2 id="monster-header" style="display: none">Created Monsters</h2>
-      <!-- Den här div-taggen används för att visa alla monster -->
-      <div class="monster-container"></div>
-      <span id="number-of-monsters">Number of monsters: 0</span>
-      <button class="see-all" id="seeAllButton">See All Monsters</button>
     </section>
 
     <section class="cards-list">
@@ -131,11 +149,12 @@
       </article>
     </section>
 
-    <!-- Footer -->
+
+    </body>
+   <!-- Footer -->
     <footer>
       <a href="https://github.com/EmilJohanssonz/Grupp6.git" target="_blank">
         <img src="/img/github.png" alt="Github logo" />
       </a>
     </footer>
-  </body>
 </html>
