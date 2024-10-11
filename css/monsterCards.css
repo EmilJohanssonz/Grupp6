@@ -3,7 +3,8 @@
 .cards-list{ /*runt hela boxe */
     display: flex;
     flex-direction: column;   
-    border: 5px solid blue;  
+    border: 5px solid blue;
+    width : fit-content;
 }
 ul{/*innuti stora boxe */
     overflow-x: scroll;
@@ -36,6 +37,7 @@ ul{/*innuti stora boxe */
     background-color: #ADBCFF;
     color: #3f445c;
     font-family: 'DM Mono', monospace;
+
 }
 
  /*---------------själva cardsen ---------------------------*/

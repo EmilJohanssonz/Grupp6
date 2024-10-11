@@ -19,10 +19,10 @@ html {
 body {
   background-color: #fff;
   font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
 }
 
 header {
@@ -183,4 +183,6 @@ width: 300px;
     border-radius: 5px;
 }
 }
+
+
 

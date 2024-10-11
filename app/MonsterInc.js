@@ -147,7 +147,7 @@ function showAllMonsters() {
       seeAllList.innerHTML = "";
       updateMonsterList(monsters, seeAllList);
     }
-    seeAllList.style.display = "block";
+    seeAllList.style.display = "";
     seeAllButton.textContent = "Hide All Monsters"; // Ändrar knapptexten
   }
   monstersVisible = !monstersVisible; // Växlar status för synlighet
