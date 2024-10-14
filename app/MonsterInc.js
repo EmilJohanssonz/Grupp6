@@ -88,11 +88,11 @@ function updateMonsterList(monstersToShow, targetElement) {
 
   // Färger för bakgrund, används bara för att sätta rätt RGB för bakgrunden
   const colors = {
-    "red": "rgb(255, 160, 122)",
+    "red": "rgb(255, 91, 65)",
     "blue": "rgb(135, 206, 250)",
     "green": "rgb(144, 238, 144)",
     "white": "rgb(245, 245, 245)",
-    "black": "rgb(169, 169, 169)"
+    "black": "rgb(114, 114, 114)"
   };
 
   monstersToShow.forEach((monster, index) => {
