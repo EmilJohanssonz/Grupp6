@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
 
 /*--------------skroll panel ----------------------------*/
-.card-list::-webkit-scrollbar {
+/* card-list::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
@@ -14,10 +14,10 @@
 .card-list::-webkit-scrollbar-track {
     background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
 }
-
+ */
 
 /*förälder */
-.all-monsters{ 
+/* .all-monsters{ 
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -28,8 +28,11 @@
     overflow-x: scroll;
     border: 5px solid #9CF6F6;
     border-radius: 16px;
+    button{
+        display: none;
+    }
     
-}
+} */
 
 
 
