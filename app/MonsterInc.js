@@ -30,7 +30,7 @@ const monsterList = document.querySelector(".monster-container");
 const numberOfMonsters = document.querySelector("#number-of-monsters");
 const monsterHeader = document.querySelector("#monster-header");
 const seeAllButton = document.querySelector(".see-all");
-const seeAllList = document.getElementById("see-all");
+const seeAllList = document.getElementById("see-all-monsters");
 const searchButton = document.getElementById("search-button");
 
 // Variabler vi använder
@@ -52,18 +52,21 @@ monsterForm.addEventListener("submit", (event) => {
   const eyes = monsterForm.eyes.value;
   const horn = monsterForm.horn.value;
   const ears = monsterForm.ears.value;
+  const wings = monsterForm.wings.value;
 
+  
   // Kontrollera om ett monster redigeras eller skapas nytt
+  // om man har gjort nytt värde får man lägga till det här också
   const editIndex = monsterForm.getAttribute("data-edit-index");
 
   if (editIndex !== null) {
     // Redigera befintligt monster
-    monsters[editIndex] = { name, type, color, tentacles, eyes, horn, ears };
+    monsters[editIndex] = { name, type, color, tentacles, eyes, horn, ears, wings };
     monsterForm.removeAttribute("data-edit-index");
     submitButton.textContent = "Add Monster";
   } else {
     // Skapa nytt monster
-    const newMonster = { name, type, color, tentacles, eyes, horn, ears };
+    const newMonster = { name, type, color, tentacles, eyes, horn, ears, wings };
     monsters.push(newMonster);
   }
 
@@ -76,32 +79,44 @@ monsterForm.addEventListener("submit", (event) => {
 
 // Funktion för att uppdatera monsterlistan
 // Skapar en ny div för varje monster som läggs till
+//monsterDiv.classList.add gör så man kan styla diven i css.
 // Gör så att diven ändrar bakgrundsfärg till varje monster med respektive färg man gav på monstret
 // Här kan man redigera de nya värderna man skrev i input formuläret, glöm inte att upppdatera i uppdateringsfunktionen!
 //         ⬇️               ⬇️
 function updateMonsterList(monstersToShow, targetElement) {
   targetElement.innerHTML = ""; // Rensa befintlig lista
+
+  // Färger för bakgrund, används bara för att sätta rätt RGB för bakgrunden
+  const colors = {
+    "red": "rgb(255, 160, 122)",
+    "blue": "rgb(135, 206, 250)",
+    "green": "rgb(144, 238, 144)",
+    "white": "rgb(245, 245, 245)",
+    "black": "rgb(169, 169, 169)"
+  };
+
   monstersToShow.forEach((monster, index) => {
     const monsterDiv = document.createElement("div");
     monsterDiv.classList.add("monster-box");
-    monsterDiv.style.backgroundColor = monster.color;
 
+    // Sätt bakgrundsfärgen baserat på RGB-värdet från 'colors' objektet
+    monsterDiv.style.backgroundColor = colors[monster.color];
+
+    // Använd 'monster.color' för att visa färgnamnet i texten
     monsterDiv.innerHTML = `
       <p><strong>Name:</strong> ${monster.name}</p>
       <p><strong>Type:</strong> ${monster.type}</p>
-      <p><strong>Color:</strong> ${monster.color}</p>
+      <p><strong>Color:</strong> ${monster.color}</p> <!-- Visar färgnamnet -->
       <p><strong>Tentacles:</strong> ${monster.tentacles}</p>
       <p><strong>Eyes:</strong> ${monster.eyes}</p>
       <p><strong>Horn:</strong> ${monster.horn}</p>
       <p><strong>Ears:</strong> ${monster.ears}</p>
+      <p><strong>Wings:</strong> ${monster.wings}</p>
       <button class="edit-btn">Edit</button>
       <button class="delete-btn">Delete</button>
     `;
 
-    // Lägg till händelsehanterare för redigera-knappen
-    // Här får man uppdatera de nya värdena som man gav tidigare i koden
-    //      ⬇️               ⬇️
-
+    // Hantera edit- och delete-knapparna som vanligt
     monsterDiv.querySelector(".edit-btn").addEventListener("click", () => {
       const monsterToEdit = monsters[index];
       monsterForm.name.value = monsterToEdit.name;
@@ -111,11 +126,11 @@ function updateMonsterList(monstersToShow, targetElement) {
       monsterForm.eyes.value = monsterToEdit.eyes;
       monsterForm.horn.value = monsterToEdit.horn;
       monsterForm.ears.value = monsterToEdit.ears;
+      monsterForm.wings.value = monsterToEdit.wings;
       submitButton.textContent = "Save Changes";
       monsterForm.setAttribute("data-edit-index", index);
     });
 
-    // Lägg till händelsehanterare för ta bort-knappen
     monsterDiv.querySelector(".delete-btn").addEventListener("click", () => {
       monsters.splice(index, 1); // Ta bort valt monster
       updateMonsterList(monsters, monsterList);
@@ -127,11 +142,12 @@ function updateMonsterList(monstersToShow, targetElement) {
   });
 }
 
+
 // Funktion för att hantera visning/döljning av monster när "See All Monsters"-knappen trycks
 function showAllMonsters() {
   if (monstersVisible) {
     // Om monsterlistan visas, döljer vi den
-    seeAllList.style.display = "none";
+    seeAllList.style.display = "";
     seeAllButton.textContent = "See All Monsters"; // Ändrar knapptexten
   } else {
     // Om monsterlistan är dold, visar vi den
@@ -141,7 +157,7 @@ function showAllMonsters() {
       seeAllList.innerHTML = "";
       updateMonsterList(monsters, seeAllList);
     }
-    seeAllList.style.display = "block";
+    seeAllList.style.display = "none";
     seeAllButton.textContent = "Hide All Monsters"; // Ändrar knapptexten
   }
   monstersVisible = !monstersVisible; // Växlar status för synlighet
