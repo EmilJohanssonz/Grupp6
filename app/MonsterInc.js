@@ -79,6 +79,7 @@ monsterForm.addEventListener("submit", (event) => {
 
 // Funktion för att uppdatera monsterlistan
 // Skapar en ny div för varje monster som läggs till
+//monsterDiv.classList.add gör så man kan styla diven i css.
 // Gör så att diven ändrar bakgrundsfärg till varje monster med respektive färg man gav på monstret
 // Här kan man redigera de nya värderna man skrev i input formuläret, glöm inte att upppdatera i uppdateringsfunktionen!
 //         ⬇️               ⬇️
