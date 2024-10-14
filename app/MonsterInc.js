@@ -96,6 +96,7 @@ function updateMonsterList(monstersToShow, targetElement) {
   };
 
   monstersToShow.forEach((monster, index) => {
+    monsterList.innerHTML = ""; 
     const monsterDiv = document.createElement("div");
     monsterDiv.classList.add("monster-box");
 
@@ -129,6 +130,10 @@ function updateMonsterList(monstersToShow, targetElement) {
       monsterForm.wings.value = monsterToEdit.wings;
       submitButton.textContent = "Save Changes";
       monsterForm.setAttribute("data-edit-index", index);
+if(index === 0){
+monsterList.appendChild(monsterDiv)
+}
+
     });
 
     monsterDiv.querySelector(".delete-btn").addEventListener("click", () => {
