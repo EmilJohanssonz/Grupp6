@@ -26,7 +26,9 @@ body {
 
 header {
   text-align: center;
-  font-weight: bolder;
+   font-family: "Creepster", system-ui;
+  font-weight: 400;
+  font-style: normal;
   font-size: 2rem;
   color: #c9f778;
   img {
@@ -71,15 +73,17 @@ main {
   }
 
   legend {
-    font-weight: bolder;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: #c9f778;
     text-align: center;
+    font-family: "Nosifer", sans-serif;
+  font-weight: 200;
+  font-style: normal;
   }
   fieldset {
     border: 2px solid #c9f778;
     border-radius: 5px;
-    padding: 5px 5px 0px 5px;
+    padding: 8px 8px 0px 8px;
   }
 
   label {
@@ -89,6 +93,7 @@ main {
     margin-bottom: 5px;
     display: inline-block;
     width: auto;
+    
   }
 
   input,
@@ -106,8 +111,9 @@ main {
   button {
     margin-top: 5px;
     padding: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
     background-color: #c9f778;
     color: #333;
     border: none;
@@ -130,6 +136,7 @@ main {
   padding: 20px;
   height: 400px;
   width: 300px;
+  
 }
 
 .container {
@@ -150,7 +157,16 @@ main {
     color: #c9f778;
     font-weight: bolder;
   }
+  h2 {
+    color:#c9f778;
+    font-size: 1.5rem;
+    font-family: "Nosifer", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  }
+
 }
+ 
 
 .monster-box {
   border: 4px solid #9cf6f6;
@@ -171,20 +187,25 @@ main {
     background-color: #adbcff;
     border: none;
     border-radius: 5px;
+    font-family: "Nosifer", sans-serif;
+    font-size: 1rem;
   }
 
   .edit-btn {
     background-color: #b4e255;
     border: none;
     border-radius: 5px;
+    font-family: "Nosifer", sans-serif;
+    font-size: 1rem;
   }
 }
 .monster-summary {
   button {
     margin-top: 5px;
     padding: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
     background-color: #c9f778;
     color: #333;
     border: none;
@@ -196,4 +217,10 @@ main {
   button:hover {
     background-color: #b4e255;
   }
+}
+
+  #number-of-monsters {
+  font-size: 1rem;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
 }
