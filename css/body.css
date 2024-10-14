@@ -5,15 +5,14 @@
 }
 
 html {
-  padding:5px;
+  padding: 5px;
   margin: auto;
   scroll-behavior: smooth;
   h2 {
     font-weight: bolder;
     font-size: 1.5rem;
-    color: #9CF6F6;
+    color: #9cf6f6;
     font-size: 2rem;
-    
   }
 }
 body {
@@ -29,7 +28,7 @@ header {
   text-align: center;
   font-weight: bolder;
   font-size: 2rem;
-  color: #C9F778;
+  color: #c9f778;
   img {
     width: 400px;
     height: 300px;
@@ -38,7 +37,7 @@ header {
 
 main {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   gap: 40px;
   margin-right: auto;
   margin-top: 80px;
@@ -47,19 +46,18 @@ main {
 .monster-form-section {
   display: flex;
   flex-direction: column;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   height: 400px;
   width: 300px;
-  background-color: #ADBCFF;
+  background-color: #adbcff;
   border-radius: 10px;
   /* Första ram */
-  border: 4px solid #9CF6F6;
+  border: 4px solid #9cf6f6;
   /* Simulerad andra ram */
-  box-shadow: 0 0 0 3px #C9F778, 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 3px #c9f778, 0 0 10px rgba(0, 0, 0, 0.2);
   gap: 10px;
-
 }
 
 #monsterForm {
@@ -71,39 +69,38 @@ main {
     text-align: center;
     margin-top: 5px;
   }
- 
 
   legend {
     font-weight: bolder;
     font-size: 1.6rem;
-    color: #C9F778;
+    color: #c9f778;
     text-align: center;
   }
   fieldset {
-    border: 2px solid #C9F778;
+    border: 2px solid #c9f778;
     border-radius: 5px;
     padding: 5px 5px 0px 5px;
   }
 
-    label {
-      color: #9CF6F6;
-      font-weight: bolder;
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-      display: inline-block; 
-      width: auto; 
-    }
-  
+  label {
+    color: #9cf6f6;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    display: inline-block;
+    width: auto;
+  }
 
-  input, select {
+  input,
+  select {
     padding: 5px;
     margin-top: -10px;
     font-size: 1.1rem;
-    border: 1px solid #C9F778;
+    border: 1px solid #c9f778;
     border-radius: 5px;
     background-color: #f0f0f0;
     color: #333;
-    width: 100%; 
+    width: 100%;
   }
 
   button {
@@ -111,7 +108,7 @@ main {
     padding: 10px;
     font-size: 1.2rem;
     font-weight: bold;
-    background-color: #C9F778;
+    background-color: #c9f778;
     color: #333;
     border: none;
     border-radius: 5px;
@@ -126,13 +123,13 @@ main {
 
 /* Resultat Sektion */
 .monster-list-section {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 20px;
-height: 400px;
-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 400px;
+  width: 300px;
 }
 
 .container {
@@ -144,21 +141,20 @@ width: 300px;
   padding: 20px;
   height: auto;
   width: 300px;
-  background-color: #ADBCFF;
+  background-color: #adbcff;
   border-radius: 10px;
-  border: 4px solid #9CF6F6;
-  box-shadow: 0 0 0 3px #C9F778, 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 4px solid #9cf6f6;
+  box-shadow: 0 0 0 3px #c9f778, 0 0 10px rgba(0, 0, 0, 0.2);
   p {
     font-size: 1.2rem;
-    color: #C9F778;
+    color: #c9f778;
     font-weight: bolder;
   }
 }
 
-
 .monster-box {
-  border: 4px solid #9CF6F6;
-  box-shadow: 0 0 0 3px #C9F778, 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 4px solid #9cf6f6;
+  box-shadow: 0 0 0 3px #c9f778, 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -167,13 +163,12 @@ width: 300px;
   grid-gap: 10px;
   width: 100%; /* Full bredd på förälderelementet */
   p {
-    color:#b4e255;
+    color: #b4e255;
     font-weight: bolder;
-
   }
 
   .delete-btn {
-    background-color: #ADBCFF;
+    background-color: #adbcff;
     border: none;
     border-radius: 5px;
   }
@@ -182,7 +177,7 @@ width: 300px;
     background-color: #b4e255;
     border: none;
     border-radius: 5px;
-}
+  }
 }
 .monster-summary {
   button {
@@ -190,7 +185,7 @@ width: 300px;
     padding: 10px;
     font-size: 1.2rem;
     font-weight: bold;
-    background-color: #C9F778;
+    background-color: #c9f778;
     color: #333;
     border: none;
     border-radius: 5px;
@@ -201,8 +196,4 @@ width: 300px;
   button:hover {
     background-color: #b4e255;
   }
-
 }
-
-
-
