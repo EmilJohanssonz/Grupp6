@@ -63,7 +63,7 @@
 }
 
 .monster-box p:hover{
-    background: linear-gradient(90deg,#fa0f0ffc,#f99304,#cfef02,#05ef53);
+    background: linear-gradient(90deg,#920101fc,#ab6400,#7f9200,#006020);
     text-shadow: none;
     background-clip: text;
     -webkit-text-fill-color: transparent;
