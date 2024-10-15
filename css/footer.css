@@ -1,39 +1,38 @@
-
-
-/* Styling av footer */
-
-footer {
- margin-top: auto; /*40px */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ADBCFF;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  
-.monster_pic {
-    width: 50px;
-    height: 50px;
-  }
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    justify-content: flex-end; 
+    position: relative; 
+    height: 50vh; 
 }
 
-
-
 .monster_pic {
-  display: flex;
-  justify-content: flex-end;
-  
-.monster_pic{
-    width: 200px;
-    height: 200px;
-    bottom: 40px;
-    right: 0px;
-    display:flex;
- 
-    position: absolute;
-    margin: auto;
+    display: flex;
+    justify-content: flex-end; 
+    flex-grow: 1;
+    margin-top: auto; /* Pushes the monster_pic down */
+}
 
-  
-  }
+.monster_pic img {
+    max-width: 310px; 
+    height: auto; 
+    margin-right: 20px; 
+}
+
+.footer {
+    width: 100%; 
+    background-color: #adbcff; 
+    text-align: center; 
+    position: relative; 
+    z-index: 2; 
+    margin-top: -50px; /* Pulls footer up over the monster image */
+    padding: 20px; /* Padding inside the footer */
+    height: 50px;
+}
+
+.github-icon {
+    width: 30px; 
+    height: auto; 
+    margin-top: -10px;
 }
