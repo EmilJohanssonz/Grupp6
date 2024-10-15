@@ -92,14 +92,12 @@ main {
   flex-direction: column;
   padding: 10px;
   width: 90%;
-}
+  h2{
+    text-align: center;
+    margin-top: 5px;
+  }
 
-#monsterForm h2 {
-  text-align: center;
-  margin-top: 5px;
-}
-
-#monsterForm legend {
+legend {
   font-size: 1.2rem;
   color: #c9f778;
   text-align: center;
@@ -108,13 +106,13 @@ main {
   font-style: normal;
 }
 
-#monsterForm fieldset {
+fieldset {
   border: 2px solid #c9f778;
   border-radius: 5px;
   padding: 8px 8px 0px 8px;
 }
 
-#monsterForm label {
+label {
   color: #9cf6f6;
   font-weight: bolder;
   font-size: 1.2rem;
@@ -122,23 +120,20 @@ main {
   display: inline-block;
   width: auto;
 }
+input, select{
+  padding: 5px;
+  margin-top:  -10px;
+  font-size: 1.1rem;
+  border: 1px solid #c9f778;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #333;
+  width: 100%;
+}
 
-  button {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 10px;
-    font-size: 1rem;
-    font-family: "Nosifer", sans-serif;
-    font-weight: 400;
-    background-color: #c9f778;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+}
 
-#monsterForm button {
+button {
   margin-top: 5px;
   padding: 10px;
   font-size: 1rem;
@@ -152,9 +147,10 @@ main {
   transition: background-color 0.3s;
 }
 
-#monsterForm button:hover {
+button:hover {
   background-color: #b4e255;
 }
+
 
 /* Resultat Sektion */
 .monster-list-section {
