@@ -177,8 +177,7 @@ function showAllMonsters() {
   } else {
     // Om monsterlistan är dold, visar vi den
     if (monsters.length === 0) {
-      /* seeAllList.innerHTML = "<p>No monsters available</p>"; */
-      alert("No monsters available");
+       seeAllList.innerHTML = "<p>No monsters available</p>"; 
     } else {
       seeAllList.innerHTML = "";
       updateMonsterList(monsters, seeAllList);
