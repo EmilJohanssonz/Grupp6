@@ -30,8 +30,10 @@ footer {
     bottom: 40px;
     right: 0px;
     display:flex;
+ 
     position: absolute;
     margin: auto;
 
+  
   }
 }

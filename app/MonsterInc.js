@@ -11,9 +11,7 @@ searchIcon.addEventListener("click", () => {
   // Fokusera direkt på sökfältet
   searchInput.focus();
 
-  setTimeout(() => {
-
-  }, 300); // Kortare timeout för snabbare användarrespons
+  setTimeout(() => {}, 300); // Kortare timeout för snabbare användarrespons
 });
 
 closeIcon.addEventListener("click", () => {
@@ -25,7 +23,9 @@ closeIcon.addEventListener("click", () => {
 
 // Hämta referenser till nödvändiga elementen
 const monsterForm = document.querySelector("#monsterForm");
-const submitButton = document.querySelector("#monsterForm button[type='submit']");
+const submitButton = document.querySelector(
+  "#monsterForm button[type='submit']"
+);
 const monsterList = document.querySelector(".monster-container");
 const numberOfMonsters = document.querySelector("#number-of-monsters");
 const monsterHeader = document.querySelector("#monster-header");
@@ -39,6 +39,8 @@ let monstersVisible = false; // Håller reda på om alla monster visas eller int
 
 // Hantera formulärinlämning för att skapa/redigera monster
 monsterForm.addEventListener("submit", (event) => {
+  seeAllList.style.display = "none";
+  seeAllButton.textContent = "See All Monsters";
   event.preventDefault();
 
   // Hämta input-värden från formuläret
@@ -54,19 +56,36 @@ monsterForm.addEventListener("submit", (event) => {
   const ears = monsterForm.ears.value;
   const wings = monsterForm.wings.value;
 
-  
   // Kontrollera om ett monster redigeras eller skapas nytt
   // om man har gjort nytt värde får man lägga till det här också
   const editIndex = monsterForm.getAttribute("data-edit-index");
 
   if (editIndex !== null) {
     // Redigera befintligt monster
-    monsters[editIndex] = { name, type, color, tentacles, eyes, horn, ears, wings };
+    monsters[editIndex] = {
+      name,
+      type,
+      color,
+      tentacles,
+      eyes,
+      horn,
+      ears,
+      wings,
+    };
     monsterForm.removeAttribute("data-edit-index");
     submitButton.textContent = "Add Monster";
   } else {
     // Skapa nytt monster
-    const newMonster = { name, type, color, tentacles, eyes, horn, ears, wings };
+    const newMonster = {
+      name,
+      type,
+      color,
+      tentacles,
+      eyes,
+      horn,
+      ears,
+      wings,
+    };
     monsters.push(newMonster);
   }
 
@@ -88,14 +107,23 @@ function updateMonsterList(monstersToShow, targetElement) {
 
   // Färger för bakgrund, används bara för att sätta rätt RGB för bakgrunden
   const colors = {
-    "red": "rgb(255, 160, 122)",
+<<<<<<< HEAD
+    red: "rgb(255, 160, 122)",
+    blue: "rgb(135, 206, 250)",
+    green: "rgb(144, 238, 144)",
+    white: "rgb(245, 245, 245)",
+    black: "rgb(169, 169, 169)",
+=======
+    "red": "rgb(255, 91, 65)",
     "blue": "rgb(135, 206, 250)",
     "green": "rgb(144, 238, 144)",
     "white": "rgb(245, 245, 245)",
-    "black": "rgb(169, 169, 169)"
+    "black": "rgb(114, 114, 114)"
+>>>>>>> 27f5928dcc0f53466f84eedbb01064fb4cd01895
   };
 
   monstersToShow.forEach((monster, index) => {
+    monsterList.innerHTML = "";
     const monsterDiv = document.createElement("div");
     monsterDiv.classList.add("monster-box");
 
@@ -129,6 +157,10 @@ function updateMonsterList(monstersToShow, targetElement) {
       monsterForm.wings.value = monsterToEdit.wings;
       submitButton.textContent = "Save Changes";
       monsterForm.setAttribute("data-edit-index", index);
+
+      if (index === 0) {
+        monsterList.appendChild(monsterDiv);
+      }
     });
 
     monsterDiv.querySelector(".delete-btn").addEventListener("click", () => {
@@ -136,42 +168,46 @@ function updateMonsterList(monstersToShow, targetElement) {
       updateMonsterList(monsters, monsterList);
       numberOfMonsters.textContent = `Number of monsters: ${monsters.length}`;
       updateMonsterVisibility(); // Uppdatera synligheten av rubriken "Created monsters"
+      seeAllList.style.display = "none";
+      seeAllButton.textContent = "See All Monsters";
     });
 
     targetElement.appendChild(monsterDiv);
   });
 }
 
-
 // Funktion för att hantera visning/döljning av monster när "See All Monsters"-knappen trycks
 function showAllMonsters() {
   if (monstersVisible) {
     // Om monsterlistan visas, döljer vi den
-    seeAllList.style.display = "";
-    seeAllButton.textContent = "See All Monsters"; // Ändrar knapptexten
+    seeAllList.style.display = "none";
+    seeAllButton.textContent = "See All Monsters"; // Ändrar knapptexten för att visa all monster
   } else {
     // Om monsterlistan är dold, visar vi den
     if (monsters.length === 0) {
-      seeAllList.innerHTML = "<p>No monsters available</p>";
+      /* seeAllList.innerHTML = "<p>No monsters available</p>"; */
+      alert("No monsters available");
     } else {
       seeAllList.innerHTML = "";
       updateMonsterList(monsters, seeAllList);
     }
-    seeAllList.style.display = "none";
-    seeAllButton.textContent = "Hide All Monsters"; // Ändrar knapptexten
+    seeAllList.style.display = "flex";
+    seeAllButton.textContent = "Hide All Monsters"; // Ändrar knapptexten för att göma alla monster
   }
   monstersVisible = !monstersVisible; // Växlar status för synlighet
 }
 
 // Lägg till event listener för "See All Monsters"-knappen
-seeAllButton.addEventListener("click", showAllMonsters);
+seeAllButton.addEventListener("click", () => {
+  showAllMonsters();
+});
 
 // Funktion för att uppdatera synligheten av H2-rubriken baserat på om det finns monster eller ej
 function updateMonsterVisibility() {
   if (monsters.length > 0) {
-    monsterHeader.style.display = "block";  // Visa rubriken
+    monsterHeader.style.display = "block"; // Visa rubriken
   } else {
-    monsterHeader.style.display = "none";  // Dölj rubriken om inga monster finns
+    monsterHeader.style.display = "none"; // Dölj rubriken om inga monster finns
   }
 }
 
@@ -204,4 +240,8 @@ searchInput.addEventListener("keydown", (event) => {
     searchInput.focus(); // Fokuserar på sökrutan
     searchMonsters(); // Kör sökfunktionen när man trycker på Enter
   }
+});
+
+document.addEventListener("click", (e) => {
+  console.log(e.target.classList);
 });

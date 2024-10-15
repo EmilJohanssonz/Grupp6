@@ -5,16 +5,17 @@
 }
 
 html {
-  padding: 5px;
+  padding: 0;
   margin: auto;
   scroll-behavior: smooth;
-  h2 {
-    font-weight: bolder;
-    font-size: 1.5rem;
-    color: #9cf6f6;
-    font-size: 2rem;
-  }
 }
+
+h2 {
+  font-weight: bolder;
+  font-size: 2rem; /* Sammanfogat till en rad */
+  color: #9cf6f6;
+}
+
 body {
   background-image: url("/img/monsterfluffy.jpg");
   background-repeat: no-repeat;
@@ -24,24 +25,52 @@ body {
   font-family: sans-serif;
 }
 
+.logo {
+  display: flex;
+  margin-left: 120px;
+  margin-top: -50px;
+}
+
+.logo img {
+  width: 200px;
+  height: 200px;
+}
+
 header {
   text-align: center;
-  font-weight: bolder;
-  font-size: 2rem;
+  font-family: "Creepster", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.6rem;
   color: #c9f778;
-  img {
-    width: 400px;
-    height: 300px;
-  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: -120px;
+  margin-right: 510px;
+}
+
+.rubrik2 {
+  display: flex;
+  justify-content: center;
+  font-size: 3.8rem;
+  font-family: "Creepster", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #c9f778;
+  margin-top: -80px;
+  margin-left: 485px;
 }
 
 main {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   margin-right: auto;
   margin-top: 80px;
 }
+
 /* Bygg Monster Sektion */
 .monster-form-section {
   display: flex;
@@ -53,9 +82,7 @@ main {
   width: 300px;
   background-color: #adbcff;
   border-radius: 10px;
-  /* Första ram */
   border: 4px solid #9cf6f6;
-  /* Simulerad andra ram */
   box-shadow: 0 0 0 3px #c9f778, 0 0 10px rgba(0, 0, 0, 0.2);
   gap: 10px;
 }
@@ -65,49 +92,44 @@ main {
   flex-direction: column;
   padding: 10px;
   width: 90%;
-  h2 {
-    text-align: center;
-    margin-top: 5px;
-  }
+}
 
-  legend {
-    font-weight: bolder;
-    font-size: 1.6rem;
-    color: #c9f778;
-    text-align: center;
-  }
-  fieldset {
-    border: 2px solid #c9f778;
-    border-radius: 5px;
-    padding: 5px 5px 0px 5px;
-  }
+#monsterForm h2 {
+  text-align: center;
+  margin-top: 5px;
+}
 
-  label {
-    color: #9cf6f6;
-    font-weight: bolder;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    display: inline-block;
-    width: auto;
-  }
+#monsterForm legend {
+  font-size: 1.2rem;
+  color: #c9f778;
+  text-align: center;
+  font-family: "Nosifer", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
 
-  input,
-  select {
-    padding: 5px;
-    margin-top: -10px;
-    font-size: 1.1rem;
-    border: 1px solid #c9f778;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    color: #333;
-    width: 100%;
-  }
+#monsterForm fieldset {
+  border: 2px solid #c9f778;
+  border-radius: 5px;
+  padding: 8px 8px 0px 8px;
+}
+
+#monsterForm label {
+  color: #9cf6f6;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  display: inline-block;
+  width: auto;
+}
 
   button {
     margin-top: 5px;
+    margin-bottom: 5px;
     padding: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
     background-color: #c9f778;
     color: #333;
     border: none;
@@ -116,9 +138,22 @@ main {
     transition: background-color 0.3s;
   }
 
-  button:hover {
-    background-color: #b4e255;
-  }
+#monsterForm button {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: "Nosifer", sans-serif;
+  font-weight: 400;
+  background-color: #c9f778;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#monsterForm button:hover {
+  background-color: #b4e255;
 }
 
 /* Resultat Sektion */
@@ -128,8 +163,22 @@ main {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  height: 400px;
-  width: 300px;
+  height: 400px; 
+  width: 300px;  
+  background-color: #adbcff; 
+  border-radius: 10px;
+  border: 4px solid #9cf6f6;
+  box-shadow: 0 0 0 3px #c9f778, 0 0 10px rgba(0, 0, 0, 0.2);
+  gap: 10px; 
+}
+
+/* Behåll tomma sektionen formad även utan monster-box */
+.monster-list-section::before {
+  content: "Inga monster tillagda än";
+  font-size: 1.2rem;
+  color: #c9f778;
+  font-weight: bolder;
+  text-align: center;
 }
 
 .container {
@@ -137,19 +186,18 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   padding: 20px;
-  height: auto;
+  height: 400px;
   width: 300px;
   background-color: #adbcff;
   border-radius: 10px;
   border: 4px solid #9cf6f6;
   box-shadow: 0 0 0 3px #c9f778, 0 0 10px rgba(0, 0, 0, 0.2);
-  p {
-    font-size: 1.2rem;
-    color: #c9f778;
-    font-weight: bolder;
-  }
+  gap: 10px;
+}
+
+.container h2 {
+  color: #c9f778;
 }
 
 .monster-box {
@@ -162,38 +210,60 @@ main {
   grid-template-columns: repeat(2, 1fr); /* 2 kolumner */
   grid-gap: 10px;
   width: 100%; /* Full bredd på förälderelementet */
-  p {
-    color: #b4e255;
-    font-weight: bolder;
-  }
-
-  .delete-btn {
-    background-color: #adbcff;
-    border: none;
-    border-radius: 5px;
-  }
-
-  .edit-btn {
-    background-color: #b4e255;
-    border: none;
-    border-radius: 5px;
-  }
 }
+
+.monster-box p {
+  color: #39a661;
+  font-weight: bolder;
+}
+
+.monster-box .delete-btn {
+  background-color: #adbcff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Nosifer", sans-serif;
+  font-size: 1rem;
+}
+
+.monster-box .edit-btn {
+  background-color: #b4e255;
+  border: none;
+  border-radius: 5px;
+  font-family: "Nosifer", sans-serif;
+  font-size: 1rem;
+}
+
 .monster-summary {
-  button {
-    margin-top: 5px;
-    padding: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: #c9f778;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  button:hover {
-    background-color: #b4e255;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  margin-left: 330px;
 }
+
+.monster-summary button {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: "Nosifer", sans-serif;
+  font-weight: 400;
+  background-color: #c9f778;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  justify-content: center;
+}
+
+.monster-summary button:hover {
+  background-color: #b4e255;
+}
+
+#number-of-monsters {
+  font-size: 1.4rem;
+  font-family: "Nosifer", sans-serif;
+  font-weight: 400;
+  color: #c9f778;
+}
+
