@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monster Klass</title>
     <link rel="stylesheet" href="/css/body.css" />
     <link rel="stylesheet" href="/css/search.css" />
-    <link rel="stylesheet" href="/css/footer.css"/>
-    <link rel="stylesheet" href="/css/monsterCards.css"/>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/monsterCards.css">
+    <link rel="stylesheet" href="/css/responsiv-view.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
     <script src="/app/MonsterInc.js" defer></script>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
   </head>
+  
   <body>
-    <!-- Sökning -->
+  <!--------------------------------- Sökning --------------------------------->
     <nav>
       <section class="search-section">
         <div class="search-input-wrapper">
@@ -39,7 +38,7 @@
       </section>
     </nav>
 
-    <!-- Header -->
+ <!---------------------------------- Header ---------------------------------->
     <div class="logo"><img src="/img/bild1.png" alt="en bild på monsterinc" /></div>
     <header>
       <h1>Grupp 6</h1>
@@ -48,14 +47,12 @@
     <section class="rubrik2">
       <h3>Monster Klass</h3>
     </section>
-    <main>
-
+   <main>
       <!-- Lista av skapade monster -->
       <section id="monster-list-section" aria-labelledby="monster-list">
         <div class="container">
           <h2 id="monster-header" style="display: none">Created Monsters</h2>
-          <!-- Den här div-taggen används för att visa alla monster -->
-          <div class="monster-container"></div>
+            <div class="monster-container"></div>    <!--------- Den här div-taggen används för att visa alla monster ----->
           <p id="number-of-monsters">Number of monsters: 0</p>
         </div>
         <!-- Lista av alla monster -->
@@ -66,7 +63,8 @@
           </button>
         </div>
       </section>
-      <!-- Bygg Monster Sektion -->
+   
+  <!------------------------------- Bygg Monster Sektion --------------------------->
       <section class="monster-form-section">
         <form id="monsterForm" aria-labelledby="monster-form">
           <fieldset>
@@ -154,10 +152,11 @@
       <ul id="see-all"></ul>
     </section>
     </main>  
-      <article class="all-monsters" id="see-all-monsters">
-      </article>
-  
-  <!-- Footer -->
+
+    <!-------------------------------------------- Cards ----------------------------->
+    <article class="all-monsters" id="see-all-monsters">
+    </article>
+    <!-- Footer -->
 <figure class="content">
     <div class="monster_pic">
         <img src="/img/monster1.png" alt="monsterFooter">

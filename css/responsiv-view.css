@@ -1,0 +1,19 @@
+@media only screen and (max-width: 550px){
+        main {
+            display: grid;
+            place-items: center!important;
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.4fr 0.4fr 1.2fr;
+            grid-template-areas:
+            "nav"
+            "header"
+            "section > monster-header"
+            "section > monster-list-section"
+            "section > monsterForm"
+            "section > monster-container"
+            "footer";
+        }
+        
+        
+    }
+    

@@ -59,7 +59,8 @@ html {
   top: 1.7rem;
   right: 3rem;
   animation: searchIconAnim2 0.5s forwards;
-}
+  }
+  
 
 .search-icon.change {
   animation: searchIconAnim 1s forwards;
