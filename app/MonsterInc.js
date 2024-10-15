@@ -23,9 +23,7 @@ closeIcon.addEventListener("click", () => {
 
 // Hämta referenser till nödvändiga elementen
 const monsterForm = document.querySelector("#monsterForm");
-const submitButton = document.querySelector(
-  "#monsterForm button[type='submit']"
-);
+const submitButton = document.querySelector("#monsterForm button[type='submit']");
 const monsterList = document.querySelector(".monster-container");
 const numberOfMonsters = document.querySelector("#number-of-monsters");
 const monsterHeader = document.querySelector("#monster-header");
@@ -36,6 +34,8 @@ const searchButton = document.getElementById("search-button");
 // Variabler vi använder
 let monsters = [];
 let monstersVisible = false; // Håller reda på om alla monster visas eller inte
+
+seeAllList.style.display = "none"; // Döljer "See all monster" boxen tills man trycker på knappen
 
 // Hantera formulärinlämning för att skapa/redigera monster
 monsterForm.addEventListener("submit", (event) => {
