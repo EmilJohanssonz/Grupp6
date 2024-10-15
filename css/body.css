@@ -135,6 +135,7 @@ input, select{
 
 button {
   margin-top: 5px;
+  margin-bottom: 5px;
   padding: 10px;
   font-size: 1rem;
   font-family: "Nosifer", sans-serif;
