@@ -6,7 +6,10 @@
       font-size: 1.6rem; 
       text-align: center;
       justify-content: center;
-    }
+      margin-left: -10px; 
+      padding-right: 15px;
+     
+      }
     
     .search-input-wrapper {
       width: 100%; 
