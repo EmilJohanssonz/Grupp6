@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monster Klass</title>
     <script src="/app/MonsterInc.js" defer></script>
     <link rel="stylesheet" href="/css/body.css" />
     <link rel="stylesheet" href="/css/search.css" />
-    <link rel="stylesheet" href="/css/body-style.css" />
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/monsterCards.css">
+    <link rel="stylesheet" href="/css/responsiv-view.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -20,9 +20,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
-  </head>
+</head>
+
   <body>
-    <!-- Sökning -->
+  <!--------------------------------- Sökning --------------------------------->
     <nav>
       <section class="search-section">
         <div class="search-input-wrapper">
@@ -42,31 +43,27 @@
       </section>
     </nav>
 
-    <!-- Header -->
+  <!---------------------------------- Header ---------------------------------->
     <main>
       <header>
         <img src="/img/monster1.png" alt="bild på monsterinc" />
         <h1>Grupp6</h1>
         <p>Emil Sabina Tahidul Musse</p>
       </header>
-
-      <!-- Lista av skapade monster -->
-      <section id="monster-list-section" aria-labelledby="monster-list">
+      <section id="monster-list-section" aria-labelledby="monster-list"> <!---- Lista av skapade monster ---->
         <div class="container">
           <h2 id="monster-header" style="display: none">Created Monsters</h2>
-          <!-- Den här div-taggen används för att visa alla monster -->
-          <div class="monster-container"></div>
+            <div class="monster-container"></div>    <!--------- Den här div-taggen används för att visa alla monster ----->
           <p id="number-of-monsters">Number of monsters: 0</p>
         </div>
-        <!-- Lista av alla monster -->
-        <div class="monster-summary">
-          <!-- Den större boxen till höger -->
-          <button class="see-all" id="seeAllButton" style="display: flex">
+        <div class="monster-summary">  <!---- Lista av alla monster ---->
+          <button class="see-all" id="seeAllButton" style="display: flex"> <!---- Den större boxen till höger ---->
             See All Monsters
           </button>
         </div>
       </section>
-      <!-- Bygg Monster Sektion -->
+   
+  <!------------------------------- Bygg Monster Sektion --------------------------->
       <section class="monster-form-section">
         <form id="monsterForm" aria-labelledby="monster-form">
           <fieldset>
@@ -154,15 +151,15 @@
       <ul id="see-all"></ul>
     </section>
     </main>  
- 
-      <article class="all-monsters" id="see-all-monsters">
-      </article>
+    <!-------------------------------------------- Cards ----------------------------->
+    <article class="all-monsters" id="see-all-monsters">
+    </article>
   
-   <!-- Footer -->
+    <!-------------------------------------------- Footer ---------------------------->
     </footer>
     <div class="monster_pic">
         <img src="/img/monster1.png" alt="monsterFooter" >
-     </div>
+    </div>
      <a href="https://github.com/EmilJohanssonz/Grupp6" target="_blank">
      <img src="/img/github.png" alt="github"></a>
     </footer>
