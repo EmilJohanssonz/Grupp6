@@ -39,7 +39,6 @@ seeAllList.style.display = "none"; // Döljer "See all monster" boxen tills man 
 
 // Hantera formulärinlämning för att skapa/redigera monster
 monsterForm.addEventListener("submit", (event) => {
-  seeAllList.style.display = "none";
   seeAllButton.textContent = "See All Monsters";
   event.preventDefault();
 
