@@ -7,7 +7,6 @@
     <script src="/app/MonsterInc.js" defer></script>
     <link rel="stylesheet" href="/css/body.css" />
     <link rel="stylesheet" href="/css/search.css" />
-    <link rel="stylesheet" href="/css/body-style.css" />
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/monsterCards.css">
     <link
@@ -43,12 +42,15 @@
     </nav>
 
     <!-- Header -->
+    <div class="logo"><img src="/img/bild1.png" alt="en bild på monsterinc" /></div>
+    <header>
+      <h1>Grupp 6</h1>
+      <p>Emil Sabina Tahidul Musse</p>
+    </header>
+    <section class="rubrik2">
+      <h3>Monster Klass</h3>
+    </section>
     <main>
-      <header>
-        <img src="/img/monster1.png" alt="bild på monsterinc" />
-        <h1>Grupp6</h1>
-        <p>Emil Sabina Tahidul Musse</p>
-      </header>
 
       <!-- Lista av skapade monster -->
       <section id="monster-list-section" aria-labelledby="monster-list">
@@ -60,8 +62,8 @@
         </div>
         <!-- Lista av alla monster -->
         <div class="monster-summary">
-          <!-- Den större boxen till höger -->
-          <button class="see-all" id="seeAllButton" style="display: flex">
+          <!-- Den större boxen till vänster -->
+          <button class="see-all" id="seeAllButton">
             See All Monsters
           </button>
         </div>
@@ -154,18 +156,21 @@
       <ul id="see-all"></ul>
     </section>
     </main>  
- 
       <article class="all-monsters" id="see-all-monsters">
       </article>
   
-   <!-- Footer -->
-    </footer>
+  <!-- Footer -->
+<figure class="content">
     <div class="monster_pic">
-        <img src="/img/monster1.png" alt="monsterFooter" >
-     </div>
-     <a href="https://github.com/EmilJohanssonz/Grupp6" target="_blank">
-     <img src="/img/github.png" alt="github"></a>
-    </footer>
+        <img src="/img/monster1.png" alt="monsterFooter">
+    </div>
+</figure>
+
+<footer class="footer">
+    <a href="https://github.com/EmilJohanssonz/Grupp6" target="_blank">
+        <img src="/img/github.png" alt="github" class="github-icon">
+    </a>
+</footer>
     
   </body>
 </html>

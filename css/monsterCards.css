@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
 
 /*--------------skroll panel ----------------------------*/
-.card-list::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-.card-list::-webkit-scrollbar-thumb {
-    background: #201c29;
-    border-radius: 10px;
-    box-shadow: inset 2px 2px 2px #C9F778(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+.all-monsters::-webkit-scrollbar {
+    width: 10px;   /* Bredd på scrollbaren */
+    height: 10px;  /* Höjd på scrollbaren */
 }
 
-.card-list::-webkit-scrollbar-track {
-    background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+.all-monsters::-webkit-scrollbar-thumb {
+    background: #c9f778;  /* Färg på scroll-tummen */
+    border-radius: 10px;  /* Rundade hörn på tummen */
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.25); /* Skugga för djup */
+}
+
+.all-monsters::-webkit-scrollbar-track {
+    background: #f0f0f0;  /* Färg på spåret (kan justeras efter behov) */
 }
 
 
@@ -24,42 +25,45 @@
     background-color: #ADBCFF;
     color: #3f445c;
     font-family: 'DM Mono', monospace;
-    width: 100vh;
+    width: 50%;
     overflow-x: scroll;
     border: 5px solid #9CF6F6;
     border-radius: 16px;
-    
+    margin-left: 320px;
 }
 
 
 
  /*---------------själva cardsen ---------------------------*/
-
-.monster-box{
-    margin: 0;
-    min-width: 200px;
-    max-width: fit-content;
-    padding: 1.5rem;
-    border-style:outset;
+#see-all-monsters{
+.monster-box {
+    margin: 5px; 
+    min-width: 100px; 
+    max-width: calc(40% - 20px); 
+    border-style: outset;
     border: 5px solid #a29cf653;
     border-radius: 16px;
     box-shadow: -3rem 0 3rem rgb(51, 6, 69);
-    transition: 0.5s;
+    transition: transform 0.5s; 
+    padding: 10px; 
+}
 }
 
-.monster-box:hover{
+/* Hover-effekter */
+.monster-box:hover {
     transform: translateY(-1rem);
 }
 
-.monster-box:hover~.monster-box{
+.monster-box:hover ~ .monster-box {
     transform: translateX(130px);
 }
 
-.monster-box:not(:first-child){
-    margin-left: -130px;
+.monster-box:not(:first-child) {
+    margin-left: -130px; /* Flytta korten till vänster */
 }
 
-.monster-box p:hover{
+/* Texten i monster-box */
+.monster-box p:hover {
     background: linear-gradient(90deg,#920101fc,#ab6400,#7f9200,#006020);
     text-shadow: none;
     background-clip: text;
