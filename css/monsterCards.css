@@ -24,7 +24,7 @@
     border-style: outset;
     border: 5px solid #a29cf653;
     border-radius: 16px;
-    box-shadow: -5rem 0 3rem rgb(51, 6, 69);
+    box-shadow: -3rem 0 3rem rgb(51, 6, 69);
     transition: transform 0.5s; 
     padding: 10px; 
 }
@@ -32,11 +32,11 @@
 
 /* Hover-effekter */
 .monster-box:hover {
-    transform: translateY(-4rem);
+    transform: translateY(-2rem);
 }
 
 .monster-box:hover ~ .monster-box {
-    transform: translateX(50px);
+    transform: translateX(40px);
 }
 
 .monster-box:not(:first-child) {
