@@ -49,8 +49,12 @@
   /* Grid layout för monster boxen */
   .monster-box {
     display: grid; 
+    
     grid-template-columns: 1fr;
     font-size: 2.2rem;
+    transform: translateY(2rem);
+    transform: translateX(8px);
+    box-shadow: -30rem 0 3rem rgb(200, 1000, 100, 100);
     }
     
     /* Dölj allt utom den namn */
@@ -64,6 +68,7 @@
     overflow-y: auto;
     max-height: 40hv;
     max-width: 100%;
+    grid-template-columns: 1fr;
     
     width: 80%; 
     grid-column: 1 / 3; 

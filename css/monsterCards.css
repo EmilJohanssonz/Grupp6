@@ -15,14 +15,16 @@
 }
 /*---------------själva cardsen ---------------------------*/
 #see-all-monsters{
+    border: 4px solid #9cf6f6;
+    box-shadow: 0 0 0 3px #c9f778, 0 0 10px rgba(0, 0, 0, 0.2);
 .monster-box {
     margin: 5px; 
-    min-width: 100px; 
-    max-width: calc(40% - 20px); 
+    min-width: auto; 
+   /*----max-width: calc(40% - 20px); -----*/
     border-style: outset;
     border: 5px solid #a29cf653;
     border-radius: 16px;
-    box-shadow: -3rem 0 3rem rgb(51, 6, 69);
+    box-shadow: -5rem 0 3rem rgb(51, 6, 69);
     transition: transform 0.5s; 
     padding: 10px; 
 }
@@ -30,11 +32,11 @@
 
 /* Hover-effekter */
 .monster-box:hover {
-    transform: translateY(-1rem);
+    transform: translateY(-4rem);
 }
 
 .monster-box:hover ~ .monster-box {
-    transform: translateX(130px);
+    transform: translateX(50px);
 }
 
 .monster-box:not(:first-child) {
