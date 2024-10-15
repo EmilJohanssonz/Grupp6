@@ -1,29 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
-
-/*--------------skroll panel ----------------------------*/
-
-.all-monsters::-webkit-scrollbar {
-    width: 10px;   /* Bredd på scrollbaren */
-    height: 10px;  /* Höjd på scrollbaren */
-
-.card-list::-webkit-scrollbar-thumb {
-    background: #201c29;
-    border-radius: 10px;
-    box-shadow: inset 2px 2px 2px #C9F778(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
-
-}
-
-.all-monsters::-webkit-scrollbar-thumb {
-    background: #c9f778;  /* Färg på scroll-tummen */
-    border-radius: 10px;  /* Rundade hörn på tummen */
-    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.25); /* Skugga för djup */
-}
-
-.all-monsters::-webkit-scrollbar-track {
-    background: #f0f0f0;  /* Färg på spåret (kan justeras efter behov) */
-}
-}
-
 /*förälder */
  .all-monsters{ 
     padding: 20px;
@@ -38,10 +13,7 @@
     border-radius: 16px;
     margin-left: 320px;
 }
-   
-    
-
- /*---------------själva cardsen ---------------------------*/
+/*---------------själva cardsen ---------------------------*/
 #see-all-monsters{
 .monster-box {
     margin: 5px; 
