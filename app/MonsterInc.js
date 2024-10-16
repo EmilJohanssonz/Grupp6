@@ -201,6 +201,8 @@ function updateMonsterVisibility() {
   }
 }
 
+
+
 // Sökfunktion för att filtrera monster baserat på sökfältet
 // Man kan filtera med enbart namn, typ och färg
 function searchMonsters() {
@@ -214,6 +216,18 @@ function searchMonsters() {
   });
 
   updateMonsterList(filteredMonsters, monsterList); // Uppdatera listan med filtrerade monster
+
+  // Uppdatera antal matchade monster
+  const matchCountElement = document.querySelector("#match-count"); // Element för att visa antal matcher
+  if (!matchCountElement) {
+    // Skapa elementet om det inte finns
+    const newMatchCountElement = document.createElement("p");
+    newMatchCountElement.id = "match-count";
+    numberOfMonsters.insertAdjacentElement("afterend", newMatchCountElement);
+  }
+
+  // Visa antal matchningar
+  document.querySelector("#match-count").textContent = `Number of matching monsters: ${filteredMonsters.length}`;
 }
 
 // Lägg till event listener för sök-knappen
@@ -230,8 +244,4 @@ searchInput.addEventListener("keydown", (event) => {
     searchInput.focus(); // Fokuserar på sökrutan
     searchMonsters(); // Kör sökfunktionen när man trycker på Enter
   }
-});
-
-document.addEventListener("click", (e) => {
-  console.log(e.target.classList);
 });

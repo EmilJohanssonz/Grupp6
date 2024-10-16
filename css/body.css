@@ -267,4 +267,12 @@ button:hover {
   font-weight: 400;
   color: #c9f778;
 }
+#match-count {
+  font-size: 1.2rem;
+  font-family: "Nosifer", sans-serif;
+  font-weight: 400;
+  color: #c9f778;
+  text-align: center;
+
+}
 
