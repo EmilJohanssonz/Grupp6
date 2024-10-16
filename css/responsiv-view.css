@@ -67,7 +67,7 @@
     overflow-y: auto;
     max-height: 40hv;
     max-width: 100%;
-    grid-template-columns: 1fr;
+   
     
     width: 80%; 
     grid-column: 1 / 3; 
