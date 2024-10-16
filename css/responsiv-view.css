@@ -2,97 +2,104 @@
 
 @media (max-width: 768px) {
   body {
-      background-size: cover;
-      font-size: 1.6rem; 
-      text-align: center;
-      justify-content: center;
-      margin-left: -10px; 
-      padding-right: 15px;
-     
-      }
-    
-    .search-input-wrapper {
-      width: 100%; 
-      padding: 10px;
-      
-    }
- 
-    header {
-    font-size: 2rem; 
+    background-size: cover;
+    font-size: 1.6rem;
+    text-align: center;
+    justify-content: center;
+    margin-left: -10px;
+    padding-right: 15px;
+
+  }
+
+  .search-input-wrapper {
+    width: 100%;
+    padding: 10px;
+
+  }
+
+  header {
+    font-size: 2rem;
     margin-right: 0;
     margin-top: 70px;
-    }
+  }
 
   .rubrik2 {
-    font-size: 2.4rem; 
+    font-size: 2.4rem;
     margin: 10px auto;
-    }
+  }
 
-  
+
   main {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     width: 80%;
     margin: 0 auto;
     margin-top: 80px;
-    }
+  }
 
   /* Anpassa sektionerna för mobiler */
-  .monster-form-section, 
-  .monster-list-section, 
-  .container, 
+  .monster-form-section,
+  .monster-list-section,
+  .container,
   .monster-box {
-    width: 100%; 
-    margin-bottom: 20px; 
-    padding: 30px; 
-    font-size: 0.8rem; 
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 30px;
+    font-size: 0.8rem;
     text-align: left;
-    }
+  }
 
   /* Grid layout för monster boxen */
   .monster-box {
-    display: grid; 
+    margin-top: 10px;
+    display: grid;
     grid-template-columns: 1fr;
-    font-size: 2.2rem;
+    font-size: 2.0rem;
     transition: background-color 0.3s ease;
-    }
-    .monster-box:hover {
-      background-color: rgba(0, 0, 0, 0.05); /* Ändrar bara bakgrundsfärg vid hover för mobiler */
-    }
-    
-   /* Dölj allt utom den namn */
-    .monster-box p:not(:first-of-type) {
-    display: none; 
-     }
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 8px;
+  }
+
+  .monster-box:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Ändrar bara bakgrundsfärg vid hover för mobiler */
+  }
+
+  /* Dölj allt utom den namn */
+  .monster-box p:not(:first-of-type) {
+    display: none;
+  }
 
   /* Om du har en all-monsters klass */
   .all-monsters {
     flex-direction: column;
-    width: 80%; 
-    grid-column: 1 / 3; 
-    margin: 0 auto; 
+    width: 80%;
+    grid-column: 1 / 3;
+    margin: 0 auto;
     margin-bottom: 0px;
-    }
+  }
 
   .footer {
     height: auto;
     position: relative;
     margin-bottom: 0px;
-    }
+  }
 
   .logo img {
     display: none;
-    }
+  }
 
   .monster_pic {
     display: none;
-    }
-  
-  .monster-summary {
-    margin-left: 0;
-    }
+  }
 
-    .content {
-        height:80px;
-    }
+  .monster-summary {
+    margin: 0;
+    height: 10px;
+  }
+
+  .content {
+    height: 80px;
+  }
 }
