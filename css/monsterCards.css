@@ -27,6 +27,7 @@
     box-shadow: -3rem 0 3rem rgb(51, 6, 69);
     transition: transform 0.5s; 
     padding: 10px; 
+    
 }
 }
 
@@ -40,7 +41,7 @@
 }
 
 .monster-box:not(:first-child) {
-    margin-left: -130px; /* Flytta korten till vänster */
+    margin-left: 0; /* Flytta korten till vänster */
 }
 
 /* Texten i monster-box */
