@@ -28,7 +28,7 @@ body {
 .logo {
   display: flex;
   margin-left: 120px;
-  margin-top: -50px;
+  margin-top: -10px;
 }
 
 .logo img {
@@ -164,7 +164,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  height: 400px; 
+  height: auto; 
   width: 300px;  
   background-color: #adbcff; 
   border-radius: 10px;
@@ -173,14 +173,6 @@ button:hover {
   gap: 10px; 
 }
 
-/* Behåll tomma sektionen formad även utan monster-box */
-.monster-list-section::before {
-  content: "Inga monster tillagda än";
-  font-size: 1.2rem;
-  color: #c9f778;
-  font-weight: bolder;
-  text-align: center;
-}
 
 .container {
   display: flex;
@@ -188,7 +180,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  height: 400px;
+  height: auto;
   width: 300px;
   background-color: #adbcff;
   border-radius: 10px;
@@ -275,4 +267,23 @@ button:hover {
   text-align: center;
 
 }
+.filter-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
+  
+  
+ 
+}
 
+.filter-section select {
+ 
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #9cf6f6;
+  background-color: #adbcff;
+  color:#c9f778;
+  font-family: "Nosifer", sans-serif;
+
+}
