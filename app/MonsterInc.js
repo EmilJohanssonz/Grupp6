@@ -1,29 +1,35 @@
-// Hämta referenser till våra nödvänliga element
-const monsterForm = document.querySelector("#monsterForm");
-const submitButton = document.querySelector("#monsterForm button[type='submit']");
-const monsterList = document.querySelector(".monster-container");
-const numberOfMonsters = document.querySelector("#number-of-monsters");
-const monsterHeader = document.querySelector("#monster-header");
-const seeAllButton = document.querySelector(".see-all");
-const seeAllList = document.getElementById("see-all-monsters");
+// Man kan redigera koden med andra egenskaper på rad : 
+// 29 - 37
+// 42 - 77
+// 135 - 147
+
+// Hämta referenser till nödvändiga elementen i HTML
+const monsterForm = document.querySelector("#monsterForm"); // Formulär för att lägga till/redigera monster
+const submitButton = document.querySelector("#monsterForm button[type='submit']"); // Knappen för att skicka in formuläret
+const monsterList = document.querySelector(".monster-container"); // Där vi visar aktuellt monster (current monster)
+const numberOfMonsters = document.querySelector("#number-of-monsters"); // Element som visar antal monster
+const monsterHeader = document.querySelector("#monster-header"); // Rubrik ovanför aktuell monster-vy
+const seeAllButton = document.querySelector(".see-all"); // Knappen "See All Monsters"
+const seeAllList = document.getElementById("see-all-monsters"); // Boxen där alla monster visas
 
 // Nya referenser för filtrering
-const typeFilter = document.getElementById("type-filter");
-const colorFilter = document.getElementById("color-filter");
+const typeFilter = document.getElementById("type-filter"); // Filter för typ av monster
+const colorFilter = document.getElementById("color-filter"); // Filter för färg på monster
 
-// Variabler vi använder
-let monsters = [];
-let monstersVisible = false; // Håller reda på om alla monster visas eller inte
-let currentIndex = 0; // Håller reda på det aktuella monstret som visas
+// Variabler som används i logiken
+let monsters = []; // Lista för att lagra alla monster
+let monstersVisible = false; // Om alla monster är synliga eller inte
+let currentIndex = 0; // Håller reda på vilket monster som visas i "Current Monster"-sektionen
 
-seeAllList.style.display = "none"; // Döljer "See all monsters" boxen tills man trycker på knappen
+// Dölj boxen med alla monster från början
+seeAllList.style.display = "none"; 
 
-// Hantera formulärinlämning för att skapa/redigera monster
+// Hantera formulärinlämning (lägga till eller redigera monster)
 monsterForm.addEventListener("submit", (event) => {
-  seeAllButton.textContent = "See All Monsters";
-  event.preventDefault();
+  seeAllButton.textContent = "See All Monsters"; // Återställ knappen "See All Monsters"
+  event.preventDefault(); // Förhindrar att sidan laddas om när formuläret skickas
 
-  // Hämta input-värden från formuläret
+  // Hämta värden från formuläret (skapa nya egenskaper här om du vill lägga till fler)
   const name = monsterForm.name.value;
   const type = monsterForm.type.value;
   const color = monsterForm.color.value;
@@ -33,7 +39,7 @@ monsterForm.addEventListener("submit", (event) => {
   const ears = monsterForm.ears.value;
   const wings = monsterForm.wings.value;
 
-  // Kontrollera om ett monster redigeras eller skapas nytt
+  // Kontrollera om vi redigerar ett befintligt monster
   const editIndex = monsterForm.getAttribute("data-edit-index");
 
   if (editIndex !== null) {
@@ -48,13 +54,15 @@ monsterForm.addEventListener("submit", (event) => {
       ears,
       wings,
     };
+
+    // Ta bort edit-index och återställ knappen till "Add Monster"
     monsterForm.removeAttribute("data-edit-index");
     submitButton.textContent = "Add Monster";
 
-    // Uppdatera endast "See All"-containern efter redigering
+    // Uppdatera endast "See All"-listan
     updateMonsterList(monsters, seeAllList, true);
   } else {
-    // Skapa nytt monster
+    // Skapa nytt monster och lägg till i listan
     const newMonster = {
       name,
       type,
@@ -65,27 +73,30 @@ monsterForm.addEventListener("submit", (event) => {
       ears,
       wings,
     };
-    monsters.push(newMonster); // Lägg till det nya monstret i arrayen
+    monsters.push(newMonster); // Lägg till nytt monster i listan
     currentIndex = monsters.length - 1; // Visa det senaste tillagda monstret
   }
 
-  // Uppdatera rubrik och antal monster
+
+   // Uppdatera antal monster och visa aktuellt monster
   updateMonsterVisibility();
-  updateMonsterList(monsters, monsterList, false); // Uppdaterar den enskilda visningen
-  monsterForm.reset();
-  numberOfMonsters.textContent = `Number of monsters: ${monsters.length}`;
+  updateMonsterList(monsters, monsterList, false); // Uppdatera enskild monster-vy
+  monsterForm.reset(); // Nollställ formuläret efter inlämning
+  numberOfMonsters.textContent = `Number of monsters: ${monsters.length}`; // Uppdatera räknaren för antal monster
 });
 
 // Funktion för att uppdatera monsterlistan
+// showAll: om det är sant, visa alla monster, annars bara ett
 function updateMonsterList(monstersToShow, targetElement, showAll = false) {
   targetElement.innerHTML = ""; // Rensa befintlig lista
 
+  // Om det inte finns några monster, visa meddelande
   if (monstersToShow.length === 0) {
     targetElement.innerHTML = "<p>No monsters available</p>";
     return;
   }
 
-  // Färger för bakgrund
+  // Definiera färger för olika monsterfärger (du kan lägga till nya färger här)
   const colors = {
     "red": "rgb(255, 91, 65)",
     "blue": "rgb(135, 206, 250)",
@@ -94,7 +105,7 @@ function updateMonsterList(monstersToShow, targetElement, showAll = false) {
     "black": "rgb(114, 114, 114)"
   };
 
-  // Visa antingen alla monster eller bara det aktuella baserat på 'showAll'
+  // Om showAll är sant, visa alla monster, annars bara det aktuella monstret
   if (showAll) {
     monstersToShow.forEach((monster) => {
       const monsterDiv = createMonsterDiv(monster);
@@ -107,12 +118,12 @@ function updateMonsterList(monstersToShow, targetElement, showAll = false) {
   }
 }
 
-// Funktion för att skapa ett monster-div
+// Funktion för att skapa en div för ett enskilt monster
 function createMonsterDiv(monster) {
   const monsterDiv = document.createElement("div");
   monsterDiv.classList.add("monster-box");
 
-  // Sätt bakgrundsfärgen baserat på RGB-värdet från 'colors' objektet
+  // Bakgrundsfärg baserat på monsterfärg (kan lägga till fler färger i 'colors'-objektet)
   const colors = {
     "red": "rgb(255, 91, 65)",
     "blue": "rgb(135, 206, 250)",
@@ -120,8 +131,9 @@ function createMonsterDiv(monster) {
     "white": "rgb(245, 245, 245)",
     "black": "rgb(114, 114, 114)"
   };
-  monsterDiv.style.backgroundColor = colors[monster.color];
+  monsterDiv.style.backgroundColor = colors[monster.color]; // Applicera färgen
 
+  // HTML för att visa monstret (lägger till flera attribut här om du vill skapa nya egenskaper)
   monsterDiv.innerHTML = `
     <p><strong>Name:</strong> ${monster.name}</p>
     <p><strong>Type:</strong> ${monster.type}</p>
@@ -135,10 +147,12 @@ function createMonsterDiv(monster) {
     <button class="delete-btn">Delete</button>
   `;
 
-  // Hantera edit- och delete-knapparna
+  // Hantera redigeringsknappen för varje monster
   monsterDiv.querySelector(".edit-btn").addEventListener("click", () => {
-    const index = monsters.indexOf(monster);
+    const index = monsters.indexOf(monster); // Hitta rätt monster i listan
     const monsterToEdit = monsters[index];
+
+    // Fyll formuläret med monstrets data för att redigera det
     monsterForm.name.value = monsterToEdit.name;
     monsterForm.type.value = monsterToEdit.type;
     monsterForm.color.value = monsterToEdit.color;
@@ -147,17 +161,18 @@ function createMonsterDiv(monster) {
     monsterForm.horn.value = monsterToEdit.horn;
     monsterForm.ears.value = monsterToEdit.ears;
     monsterForm.wings.value = monsterToEdit.wings;
-    submitButton.textContent = "Save Changes";
-    monsterForm.setAttribute("data-edit-index", index);
+    submitButton.textContent = "Save Changes"; // Ändra knappen för att spara ändringar
+    monsterForm.setAttribute("data-edit-index", index); // Sätt data-attributet för redigering
   });
 
+  // Hantera borttagningsknappen för varje monster
   monsterDiv.querySelector(".delete-btn").addEventListener("click", () => {
     const index = monsters.indexOf(monster);
-    monsters.splice(index, 1); // Ta bort valt monster
-    currentIndex = Math.max(0, currentIndex - 1); // Visa föregående monster om det sista monstret togs bort
-    updateMonsterList(monsters, seeAllList, true); // Uppdatera endast i "See All"-containern
-    numberOfMonsters.textContent = `Number of monsters: ${monsters.length}`;
-    updateMonsterVisibility();
+    monsters.splice(index, 1); // Ta bort monstret från listan
+    currentIndex = Math.max(0, currentIndex - 1); // Justera för att visa rätt monster efter borttagning
+    updateMonsterList(monsters, seeAllList, true); // Uppdatera "See All"-listan
+    numberOfMonsters.textContent = `Number of monsters: ${monsters.length}`; // Uppdatera räknaren
+    updateMonsterVisibility(); // Uppdatera synligheten
     seeAllList.style.display = "none";
     seeAllButton.textContent = "See All Monsters";
   });
@@ -165,14 +180,16 @@ function createMonsterDiv(monster) {
   return monsterDiv;
 }
 
-// Funktion för att hantera visning/döljning av monster när "See All Monsters"-knappen trycks
+/// Funktion för att visa eller dölja alla monster när "See All Monsters"-knappen trycks
 function showAllMonsters() {
-  monstersVisible = !monstersVisible;
+  monstersVisible = !monstersVisible; // Växla mellan synligt och dolt
 
+  // Växla synligheten baserat på om alla monster syns eller ej
   if (monstersVisible) {
     seeAllButton.textContent = "Hide All Monsters";
     updateMonsterList(monsters, seeAllList, true); // Visa alla monster
     seeAllList.style.display = "flex";
+    // Dölj alla monster om det finns mer monster i listan
   } else {
     seeAllButton.textContent = "See All Monsters";
     seeAllList.style.display = "none"; // Dölj alla monster när de göms
@@ -195,12 +212,12 @@ function updateMonsterVisibility() {
 
 // Funktion för att filtrera monster baserat på dropdown-menyerna
 function filterMonsters() {
-  const selectedType = typeFilter.value.toLowerCase();
-  const selectedColor = colorFilter.value.toLowerCase();
-
+  const selectedType = typeFilter.value.toLowerCase(); // Läsa in valt filtertyp
+  const selectedColor = colorFilter.value.toLowerCase(); // Läsa in valt filterfärg
+// Filtera monster baserat på valt filtertyp och färg
   const filteredMonsters = monsters.filter((monster) => {
-    const matchesType = selectedType === "" || monster.type.toLowerCase() === selectedType;
-    const matchesColor = selectedColor === "" || monster.color.toLowerCase() === selectedColor;
+    const matchesType = selectedType === "" || monster.type.toLowerCase() === selectedType; // Kontrollera om typen matchar valt filtertyp
+    const matchesColor = selectedColor === "" || monster.color.toLowerCase() === selectedColor; // Kontrollera om färgen matchar valt filterfärg
     return matchesType && matchesColor;
   });
 
