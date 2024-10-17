@@ -1,4 +1,4 @@
-// Hämta referenser till nödvändiga elementen
+// Hämta referenser till våra nödvänliga element
 const monsterForm = document.querySelector("#monsterForm");
 const submitButton = document.querySelector("#monsterForm button[type='submit']");
 const monsterList = document.querySelector(".monster-container");
@@ -50,6 +50,9 @@ monsterForm.addEventListener("submit", (event) => {
     };
     monsterForm.removeAttribute("data-edit-index");
     submitButton.textContent = "Add Monster";
+
+    // Uppdatera endast "See All"-containern efter redigering
+    updateMonsterList(monsters, seeAllList, true);
   } else {
     // Skapa nytt monster
     const newMonster = {
@@ -62,13 +65,13 @@ monsterForm.addEventListener("submit", (event) => {
       ears,
       wings,
     };
-    monsters.push(newMonster);
+    monsters.push(newMonster); // Lägg till det nya monstret i arrayen
     currentIndex = monsters.length - 1; // Visa det senaste tillagda monstret
   }
 
   // Uppdatera rubrik och antal monster
   updateMonsterVisibility();
-  updateMonsterList(monsters, monsterList, monstersVisible);
+  updateMonsterList(monsters, monsterList, false); // Uppdaterar den enskilda visningen
   monsterForm.reset();
   numberOfMonsters.textContent = `Number of monsters: ${monsters.length}`;
 });
@@ -152,7 +155,7 @@ function createMonsterDiv(monster) {
     const index = monsters.indexOf(monster);
     monsters.splice(index, 1); // Ta bort valt monster
     currentIndex = Math.max(0, currentIndex - 1); // Visa föregående monster om det sista monstret togs bort
-    updateMonsterList(monsters, monsterList, monstersVisible);
+    updateMonsterList(monsters, seeAllList, true); // Uppdatera endast i "See All"-containern
     numberOfMonsters.textContent = `Number of monsters: ${monsters.length}`;
     updateMonsterVisibility();
     seeAllList.style.display = "none";
@@ -172,8 +175,7 @@ function showAllMonsters() {
     seeAllList.style.display = "flex";
   } else {
     seeAllButton.textContent = "See All Monsters";
-    updateMonsterList(monsters, seeAllList, false); // Visa endast ett monster
-    seeAllList.style.display = "none";
+    seeAllList.style.display = "none"; // Dölj alla monster när de göms
   }
 }
 
@@ -208,3 +210,4 @@ function filterMonsters() {
 // Lägg till event listeners för dropdown-filters
 typeFilter.addEventListener("change", filterMonsters);
 colorFilter.addEventListener("change", filterMonsters);
+
