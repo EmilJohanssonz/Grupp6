@@ -65,6 +65,10 @@ header {
   margin-left: 485px;
 }
 /*Main section*/
+.allButtun{
+  margin-left: 6rem;
+ }
+
 main {
   display: flex;
   justify-content: center;
@@ -72,9 +76,6 @@ main {
   margin-right: auto;
   margin-top: 80px;
 }
-.allButtun{
-  margin-left: 6rem;
- }
 
 /* Bygg Monster Sektion */
 .monster-form-section {
