@@ -1,134 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monster Klass</title>
     <link rel="stylesheet" href="/css/body.css" />
-    <link rel="stylesheet" href="/css/search.css" />
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/monsterCards.css">
-    <link rel="stylesheet" href="/css/responsiv-view.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/monsterCards.css" />
+    <link rel="stylesheet" href="/css/responsiv-view.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap"
+      rel="stylesheet"
+    />
     <script src="/app/MonsterInc.js" defer></script>
-</head>
+  </head>
 
-<body>
-
-<!---------------------------------- Header ---------------------------------->
-    <div class="logo"><img src="/img/bild1.png" alt="en bild på monsterinc" /></div>
+  <body>
+    <!---------------------------------- Header ---------------------------------->
+    <div class="logo">
+      <img src="/img/bild1.png" alt="en bild på monsterinc" />
+    </div>
     <header>
-        <h1>Grupp 6</h1>
-        <p>Emil Sabina Tahidul Musse</p>
+      <h1>Grupp 6</h1>
+      <p>Emil Sabina Tahidul Mustafa</p>
     </header>
     <section class="rubrik2">
-        <h3>Monster Klass</h3>
+      <h3>Monster Klass</h3>
     </section>
     <main>
-        <!-- Lista av skapade monster -->
-        <section id="monster-list-section" aria-labelledby="monster-list">
-            <div class="container">
-                <h2 id="monster-header">Created Monsters</h2>
-                <div class="monster-container"></div>    <!--------- Den här div-taggen används för att visa alla monster ----->
+      <!-- Lista av skapade monster -->
+      <section id="monster-list-section" aria-labelledby="monster-list">
+        <div class="container">
+          <h2 id="monster-header">Created Monsters</h2>
+          <div class="monster-container"></div>
+          <!--------- Den här div-taggen används för att visa alla monster ----->
 
-                <p id="number-of-monsters">Total number of monsters: 0</p>
-            </div>
-            <!-- Lista av alla monster -->
-            <div class="monster-summary">
-            </div>
-            
-            <!-- Filtreringssektion -->
-            <div class="filter-section">
-              <!-- Den större boxen till vänster -->
-              <button class="see-all" id="seeAllButton">
-                  See All Monsters
-              </button>
-                <!-- Dropdown för monster typer -->
-                <select id="type-filter" aria-label="Filter by monster type">
-                    <option value="">All Types</option>
-                    <option value="water">Water</option>
-                    <option value="fire">Fire</option>
-                    <option value="earth">Earth</option>
-                </select>
+          <p id="number-of-monsters">Total number of monsters: 0</p>
+        </div>
+        <!-- Lista av alla monster -->
+        <div class="monster-summary"></div>
 
-                <!-- Dropdown för färger -->
-                <select id="color-filter" aria-label="Filter by monster color">
-                    <option value="">All Colors</option>
-                    <option value="blue">Blue</option>
-                    <option value="green">Green</option>
-                    <option value="red">Red</option>
-                    <option value="white">White</option>
-                    <option value="black">Black</option>
-                </select>
-            </div>
-        </section>
+        <!-- Filtreringssektion -->
+        <div class="filter-section">
+          <!-- Den större boxen till vänster -->
+          <button class="see-all" id="seeAllButton">See All Monsters</button>
+          <!-- Dropdown för monster typer -->
+          <select id="type-filter" aria-label="Filter by monster type">
+            <option value="">All Types</option>
+            <option value="water">Water</option>
+            <option value="fire">Fire</option>
+            <option value="earth">Earth</option>
+          </select>
 
-        <!------------------------------- Bygg Monster Sektion --------------------------->
+          <!-- Dropdown för färger -->
+          <select id="color-filter" aria-label="Filter by monster color">
+            <option value="">All Colors</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="red">Red</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+          </select>
+        </div>
+      </section>
 
-        <section class="monster-form-section">
-            <form id="monsterForm" aria-labelledby="monster-form">
-                <fieldset>
-                    <legend>Monster Attributes</legend>
-                    <label for="name">Monster Name:</label>
-                    <input type="text" name="name" id="name" placeholder="Enter monster's name" maxlength="20" required />
-                    <label for="type">Monster Type:</label>
-                    <select id="type" name="type" required>
-                        <option value="" disabled selected>Select monster type</option>
-                        <option value="water">Water</option>
-                        <option value="fire">Fire</option>
-                        <option value="earth">Earth</option>
-                    </select>
+      <!------------------------------- Bygg Monster Sektion --------------------------->
 
-                    <label for="color">Monster Color:</label>
-                    <select id="color" name="color" required>
-                        <option value="" disabled selected>Select monster color</option>
-                        <option id="blue" value="blue">Blue</option>
-                        <option id="green" value="green">Green</option>
-                        <option id="red" value="red">Red</option>
-                        <option id="white" value="white">White</option>
-                        <option id="black" value="black">Black</option>
-                    </select>
+      <section class="monster-form-section">
+        <form id="monsterForm" aria-labelledby="monster-form">
+          <fieldset>
+            <legend>Monster Attributes</legend>
+            <label for="name">Monster Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter monster's name"
+              maxlength="20"
+              required
+            />
+            <label for="type">Monster Type:</label>
+            <select id="type" name="type" required>
+              <option value="" disabled selected>Select monster type</option>
+              <option value="water">Water</option>
+              <option value="fire">Fire</option>
+              <option value="earth">Earth</option>
+            </select>
 
-                    <label for="eyes">Number of eyes:</label>
-                    <input type="number" id="eyes" name="eyes" placeholder="Choose number of eyes" min="0" max="20" required />
+            <label for="color">Monster Color:</label>
+            <select id="color" name="color" required>
+              <option value="" disabled selected>Select monster color</option>
+              <option id="blue" value="blue">Blue</option>
+              <option id="green" value="green">Green</option>
+              <option id="red" value="red">Red</option>
+              <option id="white" value="white">White</option>
+              <option id="black" value="black">Black</option>
+            </select>
 
-                    <label for="ears">Number of ears:</label>
-                    <input type="number" id="ears" name="ears" placeholder="Choose number of ears" min="0" max="20" required />
+            <label for="eyes">Number of eyes:</label>
+            <input
+              type="number"
+              id="eyes"
+              name="eyes"
+              placeholder="Choose number of eyes"
+              min="0"
+              max="20"
+              required
+            />
 
-                    <label for="horn">Number of horns:</label>
-                    <input type="number" id="horn" name="horn" placeholder="Choose number of horns" min="0" max="20" required />
+            <label for="ears">Number of ears:</label>
+            <input
+              type="number"
+              id="ears"
+              name="ears"
+              placeholder="Choose number of ears"
+              min="0"
+              max="20"
+              required
+            />
 
-                    <label for="tentacles">Number of tentacles:</label>
-                    <input type="number" id="tentacles" name="tentacles" placeholder="Choose number of tentacles" min="0" max="20" required />
+            <label for="horn">Number of horns:</label>
+            <input
+              type="number"
+              id="horn"
+              name="horn"
+              placeholder="Choose number of horns"
+              min="0"
+              max="20"
+              required
+            />
 
-                    <label for="wings">Number of wings:</label>
-                    <input type="number" id="wings" name="wings" placeholder="Choose number of wings" min="0" max="4" />
+            <label for="tentacles">Number of tentacles:</label>
+            <input
+              type="number"
+              id="tentacles"
+              name="tentacles"
+              placeholder="Choose number of tentacles"
+              min="0"
+              max="20"
+              required
+            />
 
-                    <button class="add-monster" type="submit">Add Monster</button>
-                </fieldset>
-            </form>
-        </section>
-    </main>  
+            <label for="wings">Number of wings:</label>
+            <input
+              type="number"
+              id="wings"
+              name="wings"
+              placeholder="Choose number of wings"
+              min="0"
+              max="4"
+            />
+
+            <button class="add-monster" type="submit">Add Monster</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
 
     <!-------------------------------------------- Cards ----------------------------->
 
     <article class="all-monsters" id="see-all-monsters"></article>
-    
+
     <!-- Footer -->
     <figure class="content">
-        <div class="monster_pic">
-            <img src="/img/monster1.png" alt="monsterFooter">
-        </div>
+      <div class="monster_pic">
+        <img src="/img/monster1.png" alt="monsterFooter" />
+      </div>
     </figure>
 
-    <footer class="footer"> 
-        <a href="https://github.com/EmilJohanssonz/Grupp6" target="_blank">
-            <img src="/img/github.png" alt="github" class="github-icon">
-        </a>
+    <footer class="footer">
+      <a href="https://github.com/EmilJohanssonz/Grupp6" target="_blank">
+        <img src="/img/github.png" alt="github" class="github-icon" />
+      </a>
     </footer>
-</body>
+  </body>
 </html>
