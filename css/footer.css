@@ -12,14 +12,13 @@
     display: flex;
     justify-content: flex-end; 
     flex-grow: 1;
-    margin-top: auto; /* Pushes the monster_pic down */
+    margin-top: 99px; /* Pushes the monster_pic down */
 }
 
 .monster_pic img {
-    max-width: 310px; 
-    height: auto; 
-    margin-right: 20px; 
-}
+    max-width: auto; 
+    height: 400px; 
+   }
 
 .footer {
     width: 100%; 
