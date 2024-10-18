@@ -151,7 +151,7 @@ button:hover {
 
 #monster-header{
   font-family: "creepster", system-ui;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
 }
 
 /* Resultat Sektion */
@@ -251,7 +251,7 @@ button:hover {
 }
 /* Number of monsters */
 #number-of-monsters {
-  font-size: 1.15rem;
+  font-size: 0.7rem;
   font-family: "Nosifer", sans-serif;
   font-weight: 400;
   color: #c9f778;
