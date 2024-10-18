@@ -27,5 +27,14 @@
 </ol>
 <p><b>💡 Contributions are welcome! Feel free to open issues or submit pull requests to improve the functionality or styling of the app.</b></p><br>
 
+## Contributors
+This project was completed as a group assignment. Here are the members of our team:
+
+- **[Emil](https://github.com/EmilJohanssonz)** 👨‍💻 – Frontend Developer
+- **[Sabina](https://github.com/Mejlisson)** 👩‍💻 – Frontend Developer
+- **[Mustafa](https://github.com/Mustaf-Said)** 👨‍💻 – Frontend Developer
+- **[Tahidul](https://github.com/tahidularafhin)** 👨‍💻 – Frontend Developer
+
+
 <h4>📄 License</h4>
 <p>This project is licensed under the MIT License.</p>
