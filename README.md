@@ -32,7 +32,7 @@ This project was completed as a group assignment. Here are the members of our te
 
 - **[Emil](https://github.com/EmilJohanssonz)** 👨‍💻 – Frontend Developer
 - **[Sabina](https://github.com/Mejlisson)** 👩‍💻 – Frontend Developer
-- **[Musse](https://github.com/Mustaf-Said)** 👨‍💻 – Frontend Developer
+- **[Mustafa](https://github.com/Mustaf-Said)** 👨‍💻 – Frontend Developer
 - **[Tahidul](https://github.com/tahidularafhin)** 👨‍💻 – Frontend Developer
 
 
