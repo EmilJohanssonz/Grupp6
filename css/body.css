@@ -72,6 +72,9 @@ main {
   margin-right: auto;
   margin-top: 80px;
 }
+.allButtun{
+  margin-left: 6rem;
+ }
 
 /* Bygg Monster Sektion */
 .monster-form-section {

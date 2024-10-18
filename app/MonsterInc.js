@@ -11,7 +11,7 @@ const numberOfMonsters = document.querySelector("#number-of-monsters"); // Eleme
 const monsterHeader = document.querySelector("#monster-header"); // Rubrik ovanför aktuell monster-vy
 const seeAllButton = document.querySelector(".see-all"); // Knappen "See All Monsters"
 const seeAllList = document.getElementById("see-all-monsters"); // Boxen där alla monster visas
-
+seeAllButton.classList.add('allButtun')
 // Nya referenser för filtrering
 const typeFilter = document.getElementById("type-filter"); // Filter för typ av monster
 const colorFilter = document.getElementById("color-filter"); // Filter för färg på monster
