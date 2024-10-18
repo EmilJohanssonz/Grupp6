@@ -208,7 +208,7 @@ button:hover {
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(2, 100px); /* 2 kolumner */
-  grid-gap: 10px;
+  grid-gap: 7px;
   width:auto; /* Full bredd på förälderelementet */
 }
 

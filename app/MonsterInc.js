@@ -188,7 +188,7 @@ function showAllMonsters() {
   if (monstersVisible) {
     seeAllButton.textContent = "Hide All Monsters";
     updateMonsterList(monsters, seeAllList, true); // Visa alla monster
-    seeAllList.style.display = "flex";
+    seeAllList.style.display = "";
     // Dölj alla monster om det finns mer monster i listan
   } else {
     seeAllButton.textContent = "See All Monsters";
