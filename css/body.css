@@ -96,20 +96,22 @@ main {
   height: auto;
   h2{
     text-align: center;
+    
   }
 
 legend {
-  font-size: 0.7rem;
   color: #c9f778;
   text-align: center;
   font-family: "Nosifer", sans-serif;
-  font-weight: 200;
+  font-size: 0.8rem;
+  font-weight: 400;
   font-style: normal;
 }
 
 fieldset {
   border: 2px solid #c9f778;
   border-radius: 5px;
+  padding: 5px;
 }
 
 label {
@@ -132,6 +134,10 @@ input, select{
 }
 
 button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 1px;
+  padding-right: 1px;
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 0.7rem;
@@ -234,7 +240,7 @@ button:hover {
 .monster-summary button {
   margin-top: 5px;
   padding: 10px;
-  font-size: 1rem;
+  font-size: 2rem;
   font-family: "Nosifer", sans-serif;
   font-weight: 400;
   background-color: #c9f778;
