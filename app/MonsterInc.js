@@ -173,7 +173,7 @@ function createMonsterDiv(monster) {
     updateMonsterList(monsters, seeAllList, true); // Uppdatera "See All"-listan
     numberOfMonsters.textContent = `Number of monsters: ${monsters.length}`; // Uppdatera räknaren
     updateMonsterVisibility(); // Uppdatera synligheten
-    seeAllList.style.display = "block";
+    seeAllList.style.display = "";
     seeAllButton.textContent = "See All Monsters";
   });
 
