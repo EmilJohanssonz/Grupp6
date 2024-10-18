@@ -279,6 +279,8 @@ button:hover {
 
 }
 .filter-section {
+  margin-left: 200px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   margin-top: 10px;

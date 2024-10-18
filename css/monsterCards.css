@@ -7,11 +7,12 @@
     background-color: #ADBCFF;
     color: #3f445c;
     font-family: 'DM Mono', monospace;
-    width: 50%;
     overflow-x: scroll;
     border: 5px solid #9CF6F6;
     border-radius: 16px;
-    margin-left: 320px;
+    justify-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 /*---------------själva cardsen ---------------------------*/
 #see-all-monsters{
