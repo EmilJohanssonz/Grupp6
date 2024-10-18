@@ -167,7 +167,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  height: auto; 
+  height: 400px; 
   width: 300px;  
   background-color: #adbcff; 
   border-radius: 10px;
@@ -176,6 +176,10 @@ button:hover {
   gap: 10px; 
 }
 
+.monster-container{
+  max-width: 300px;
+  padding: 10px;
+}
 
 .container {
   display: flex;
@@ -203,14 +207,15 @@ button:hover {
   margin-bottom: 20px;
   border-radius: 10px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 kolumner */
+  grid-template-columns: repeat(2, 100px); /* 2 kolumner */
   grid-gap: 10px;
-  width: 100%; /* Full bredd på förälderelementet */
+  width:auto; /* Full bredd på förälderelementet */
 }
 
 .monster-box p {
   color: #39a661;
   font-weight: bolder;
+  word-break: break-all;
 }
 
 .monster-box .delete-btn {
