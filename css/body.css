@@ -239,17 +239,17 @@ button:hover {
 
 .monster-summary button {
   margin-top: 5px;
-  padding: 10px;
-  font-size: 2rem;
-  font-family: "Nosifer", sans-serif;
-  font-weight: 400;
-  background-color: #c9f778;
-  color: #333;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  justify-content: center;
+    padding: 10px;
+    font-size: 2rem;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
+    background-color: #c9f778;
+    color: #333;
+    border: 2px solid #9cf6f6;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    justify-content: center;
 }
 
 .monster-summary button:hover {
@@ -270,24 +270,30 @@ button:hover {
   text-align: center;
 
 }
-/* Filter section dropdown*/
 .filter-section {
   display: flex;
   justify-content: center;
   margin-top: 10px;
   gap: 10px;
-  
-  
- 
+
+  button {
+    border: 2px solid #9cf6f6;
+    font-size: 0.6rem;
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 0px;
+  }
 }
 
 .filter-section select {
- 
   padding: 5px;
   border-radius: 5px;
   border: 2px solid #9cf6f6;
   background-color: #adbcff;
-  color:#c9f778;
+  color: #c9f778;
   font-family: "Nosifer", sans-serif;
-
+  font-size: 0.7rem;
+  width: 140px;
+  height: 40px;
 }
