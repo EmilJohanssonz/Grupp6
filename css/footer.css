@@ -12,7 +12,7 @@
     display: flex;
     justify-content: flex-end; 
     flex-grow: 1;
-    margin-top: 99px; /* Pushes the monster_pic down */
+    margin-top: 99px; 
 }
 
 .monster_pic img {
@@ -26,8 +26,8 @@
     text-align: center; 
     position: relative; 
     z-index: 2; 
-    margin-top: -50px; /* Pulls footer up over the monster image */
-    padding: 20px; /* Padding inside the footer */
+    margin-top: -50px; 
+    padding: 20px; 
     height: 50px;
 }
 
