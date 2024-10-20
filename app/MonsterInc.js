@@ -1,12 +1,7 @@
 // Man kan redigera koden med andra egenskaper på rad : 
-// 29 - 37 kan man lägga till fler egenskaper
-// Raderna 42–77: lägger man till nya 
-//egenskaper så får man Uppdatera här där 
-//monster skapas eller redigeras
-// Raderna 135–147: här visas alla monster 
-//till diven man skapas för att output 
-//monster. denna del behöver också redigeras 
-//om man vill få ut sitt monster.
+// 36 - 44 kan man lägga till fler egenskaper
+// Raderna 47–78: om man lägger till nya egenskkaperna så får man Uppdatera här där monster skapas eller redigeras
+// Raderna 138–149: här visas alla monster till diven man skapas för att output monster. denna del behöver också redigeras om man vill få ut sitt monster.
 
 // Hämta referenser till nödvändiga elementen i HTML
 const monsterForm = document.querySelector("#monsterForm"); // Formulär för att lägga till/redigera monster
