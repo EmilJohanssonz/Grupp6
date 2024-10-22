@@ -213,17 +213,32 @@ function updateMonsterVisibility() {
 function filterMonsters() {
   const selectedType = typeFilter.value.toLowerCase(); // Läsa in valt filtertyp
   const selectedColor = colorFilter.value.toLowerCase(); // Läsa in valt filterfärg
-// Filtera monster baserat på valt filtertyp och färg
+  const countDisplay = document.getElementById("countDisplay");
+
+  // Filtera monster baserat på valt filtertyp och färg
   const filteredMonsters = monsters.filter((monster) => {
     const matchesType = selectedType === "" || monster.type.toLowerCase() === selectedType; // Kontrollera om typen matchar valt filtertyp
     const matchesColor = selectedColor === "" || monster.color.toLowerCase() === selectedColor; // Kontrollera om färgen matchar valt filterfärg
     return matchesType && matchesColor;
   });
 
-  updateMonsterList(filteredMonsters, seeAllList, true); // Uppdatera listan med filtrerade monster
+  // Uppdatera listan med filtrerade monster
+  updateMonsterList(filteredMonsters, seeAllList, true);
+
+  // Här räknar vi antalet monster som matchar den valda typen
+  const typeCount = monsters.filter((monster) => {
+    return selectedType === "" || monster.type.toLowerCase() === selectedType;
+  }).length;
+
+  // Här räknar vi antalet monster som matchar den valda färgen
+  const colorCount = monsters.filter((monster) => {
+    return selectedColor === "" || monster.color.toLowerCase() === selectedColor;
+  }).length;
+
+  // Uppdatera räkningsvisningen - Showing count for filtered monsters, type, and color
+  countDisplay.innerHTML = `Matching monsters: ${filteredMonsters.length} (Type matches: ${typeCount}, Color matches: ${colorCount})`;
 }
 
 // Lägg till event listeners för dropdown-filters
 typeFilter.addEventListener("change", filterMonsters);
 colorFilter.addEventListener("change", filterMonsters);
-
