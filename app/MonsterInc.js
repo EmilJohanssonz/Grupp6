@@ -236,7 +236,7 @@ function filterMonsters() {
   }).length;
 
   // Uppdatera räkningsvisningen - Showing count for filtered monsters, type, and color
-  countDisplay.innerHTML = `Matching monsters: ${filteredMonsters.length} (Type matches: ${typeCount}, Color matches: ${colorCount})`;
+  countDisplay.innerHTML = `Matching monsters: ${filteredMonsters.length} Type:${typeCount}, Color:${colorCount}`;
 }
 
 // Lägg till event listeners för dropdown-filters
