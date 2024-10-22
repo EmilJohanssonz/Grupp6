@@ -296,7 +296,7 @@ button:hover {
   }
 }
 
-.filter-section select {
+.filter-section select{
   padding: 5px;
   border-radius: 5px;
   border: 2px solid #9cf6f6;
@@ -305,5 +305,17 @@ button:hover {
   font-family: "Nosifer", sans-serif;
   font-size: 0.7rem;
   width: 140px;
+  height: 40px;
+}
+
+div#countDisplay {
+  color: #000000;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #9cf6f6;
+  background-color:#c9f778;
+  font-family: "Nosifer", sans-serif;
+  font-size: 0.43rem;
+  width: 150px;
   height: 40px;
 }
