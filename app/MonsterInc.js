@@ -95,15 +95,6 @@ function updateMonsterList(monstersToShow, targetElement, showAll = false) {
     return;
   }
 
-  // Definiera färger för olika monsterfärger (du kan lägga till nya färger här)
-  const colors = {
-    "red": "rgb(255, 91, 65)",
-    "blue": "rgb(135, 206, 250)",
-    "green": "rgb(144, 238, 144)",
-    "white": "rgb(245, 245, 245)",
-    "black": "rgb(114, 114, 114)"
-  };
-
   // Om showAll är sant, visa alla monster, annars bara det aktuella monstret
   if (showAll) {
     monstersToShow.forEach((monster) => {
