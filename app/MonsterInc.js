@@ -1,16 +1,12 @@
 // Central konfiguration för monster-egenskaper
 const monsterConfig = {
-  types: ["water", "fire", "earth", "air","electric", "dark", "light"], // Här kan du lägga till nya typer
+  types: ["water", "fire", "earth"], // Här kan du lägga till nya typer
   colors: {
     "red": "rgb(255, 91, 65)",
     "blue": "rgb(135, 206, 250)",
     "green": "rgb(144, 238, 144)",
     "white": "rgb(245, 245, 245)",
     "black": "rgb(114, 114, 114)",
-    "purple": "rgb(153, 51, 153)",
-    "yellow": "rgb(255, 255, 0)",
-    "orange": "rgb(255, 165, 0)",
-    "pink": "rgb(255, 192, 203)",
     // Lägg till nya färger här
   },
   attributes: ["tentacles", "eyes", "horn", "ears", "wings"] // Lägg till nya attribut här
@@ -61,14 +57,41 @@ function populateSelect(selectElement, options) {
   });
 }
 
-
 // Fyll dropdown-menyer för monster-typ och färg
 populateSelect(document.getElementById("type"), monsterConfig.types);
 populateSelect(document.getElementById("color"), Object.keys(monsterConfig.colors));
 populateSelect(typeFilter, ["", ...monsterConfig.types]); // Lägger till tomt alternativ för filter
 populateSelect(colorFilter, ["", ...Object.keys(monsterConfig.colors)]);
 
-// Hantera formulärinlämning (lägga till/redigera monster)
+// funktion förr lägga till attributes till html
+function createAttributeInputs() {
+  const attributesContainer = document.getElementById("attributes-container");
+  // Loopar genom attribut och skapar ett input-fält för varje, om det inte redan finns
+  monsterConfig.attributes.forEach(attribute => {
+    if (!document.getElementById(attribute)) {
+      const inputDiv = document.createElement("div"); 
+
+      const label = document.createElement("label");
+      label.setAttribute("for", attribute);
+      label.textContent = attribute.charAt(0).toUpperCase() + attribute.slice(1);
+
+      const input = document.createElement("input");
+      input.setAttribute("type", "text");
+      input.setAttribute("id", attribute);
+      input.setAttribute("name", attribute); 
+      input.setAttribute("placeholder", attribute);
+
+      inputDiv.appendChild(label);
+      inputDiv.appendChild(input);
+
+      attributesContainer.appendChild(inputDiv);
+    }
+  });
+}
+
+createAttributeInputs();
+
+// hämta sumbit
 monsterForm.addEventListener("submit", (event) => {
   event.preventDefault();
   
@@ -78,9 +101,10 @@ monsterForm.addEventListener("submit", (event) => {
   const color = monsterForm.color.value;
   const newAttributes = {};
   
-  // Hämta alla attribut från formuläret dynamiskt
-  monsterConfig.attributes.forEach(attr => {
-    newAttributes[attr] = monsterForm[attr].value;
+  // Iterera genom attributen och hämta värden från formuläret
+  monsterConfig.attributes.forEach(attribute => {
+    const attributeInput = document.getElementById(attribute);
+    newAttributes[attribute] = attributeInput ? attributeInput.value : ""; // Lägg till attributvärdet eller en tom sträng om det saknas
   });
 
   // Kontrollera om vi redigerar ett befintligt monster
@@ -112,6 +136,7 @@ monsterForm.addEventListener("submit", (event) => {
   monsterForm.reset();
   numberOfMonsters.textContent = `Number of monsters: ${monsters.length}`;
 });
+
 
 // Funktion för att uppdatera monsterlistan
 function updateMonsterList(monstersToShow, targetElement, showAll = false) {
