@@ -36,7 +36,7 @@
   <li>Clone the repository:
     <pre><code>git clone &lt;repository-url&gt;</code></pre>
   </li>
-  <li>Open <code>index.html</code> in your browser.</li>
+  <li>Open <code>index.html</code> in your browser to launch the application.</li>
   <li>Enjoy the project!</li>
 </ol>
 
