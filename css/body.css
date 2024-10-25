@@ -319,3 +319,13 @@ div#countDisplay {
   width: 150px;
   height: 40px;
 }
+
+.no-monsters {
+  padding: 5px;
+  border-radius: 5px;
+  border: 3px solid #9cf6f6;
+  font-weight: bolder;
+  font-size: 2rem; /* Sammanfogat till en rad */
+  color: #9cf6f6;
+  font-family: "Nosifer", sans-serif;
+}
