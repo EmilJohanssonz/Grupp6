@@ -46,17 +46,6 @@ function populateSelect(selectElement, options) {
 }
 
 
-// Rensa den första populateSelect funktionen, 
-function populateSelect(selectElement, options) {
-  selectElement.innerHTML = '<option value="" disabled selected>Select an option</option>';
-  options.forEach(option => {
-    const opt = document.createElement("option");
-    opt.value = option.toLowerCase();
-    opt.textContent = option.charAt(0).toUpperCase() + option.slice(1);
-    selectElement.appendChild(opt);
-  });
-}
-
 // Fyll dropdown-menyer för monster-typ och färg
 populateSelect(document.getElementById("type"), monsterConfig.types);
 populateSelect(document.getElementById("color"), Object.keys(monsterConfig.colors));
