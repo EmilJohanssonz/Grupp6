@@ -197,6 +197,7 @@ function createMonsterDiv(monster) {
     monsters.splice(index, 1);
     currentIndex = Math.max(0, currentIndex - 1);
     updateMonsterList(monsters, seeAllList, true);
+    updateMonsterList(monsters, monsterList, false); 
     numberOfMonsters.textContent = `Number of monsters: ${monsters.length}`;
     updateMonsterVisibility();
   });
