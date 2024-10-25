@@ -143,12 +143,12 @@ function updateMonsterList(monstersToShow, targetElement, showAll = false) {
   targetElement.innerHTML = ""; // Rensa befintlig lista
 
   if (monstersToShow.length === 0) {
-    const p = document.createElement('p');
+    const p = document.createElement('p'); //skapade class för p"taggen så vi kan styla den :)
     p.textContent = 'No monsters available';
-    p.classList.add('no-monsters'); // Lägg till CSS-klassen
+    p.classList.add('no-monsters'); // 
   
-    targetElement.innerHTML = ''; // Rensa innehållet i elementet
-    targetElement.appendChild(p); // Lägg till det nya p-elementet
+    targetElement.innerHTML = ''; 
+    targetElement.appendChild(p); 
     return;
   }
 
