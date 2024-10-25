@@ -48,25 +48,13 @@
 
         <!-- Filtreringssektion -->
         <div class="filter-section">
-          <!-- Den större boxen till vänster -->
           <button class="see-all" id="seeAllButton">See All Monsters</button>
-          <!-- Dropdown för monster typer -->
-          <select id="type-filter" aria-label="Filter by monster type">
-            <option value="">All Types</option>
-            <option value="water">Water</option>
-            <option value="fire">Fire</option>
-            <option value="earth">Earth</option>
-          </select>
-
-          <!-- Dropdown för färger -->
-          <select id="color-filter" aria-label="Filter by monster color">
-            <option value="">All Colors</option>
-            <option value="blue">Blue</option>
-            <option value="green">Green</option>
-            <option value="red">Red</option>
-            <option value="white">White</option>
-            <option value="black">Black</option>
-          </select>
+          <!-- Dropdowns för typ och färg fylls dynamiskt av JavaScript -->
+          <select id="type-filter" aria-label="Filter by monster type"></select>
+          <select
+            id="color-filter"
+            aria-label="Filter by monster color"
+          ></select>
           <div id="countDisplay"></div>
         </div>
       </section>
@@ -86,23 +74,15 @@
               maxlength="20"
               required
             />
+            <!-- Dropdowns för typ och färg fylls dynamiskt av JavaScript -->
             <label for="type">Monster Type:</label>
-            <select id="type" name="type" required>
-              <option value="" disabled selected>Select monster type</option>
-              <option value="water">Water</option>
-              <option value="fire">Fire</option>
-              <option value="earth">Earth</option>
-            </select>
+            <select id="type" name="type" required></select>
 
             <label for="color">Monster Color:</label>
-            <select id="color" name="color" required>
-              <option value="" disabled selected>Select monster color</option>
-              <option id="blue" value="blue">Blue</option>
-              <option id="green" value="green">Green</option>
-              <option id="red" value="red">Red</option>
-              <option id="white" value="white">White</option>
-              <option id="black" value="black">Black</option>
-            </select>
+            <select id="color" name="color" required></select>
+
+            <!-- Attributfält skapas dynamiskt av JavaScript -->
+            <div id="attributes-container"></div>
 
             <label for="eyes">Number of eyes:</label>
             <input
